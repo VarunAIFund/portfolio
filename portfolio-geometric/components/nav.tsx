@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Github, Linkedin } from "lucide-react";
 
 const links = [
   { href: "#about", label: "About" },
@@ -9,6 +10,11 @@ const links = [
   { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
+];
+
+const socialLinks = [
+  { href: "https://github.com/varunaifund", label: "GitHub", icon: Github },
+  { href: "https://www.linkedin.com/in/varun-sharma-891286229/", label: "LinkedIn", icon: Linkedin },
 ];
 
 export default function Nav() {
@@ -52,12 +58,27 @@ export default function Nav() {
         ))}
       </div>
 
-      <a
-        href="mailto:hello@varunsharma.dev"
-        className="hidden md:inline-flex text-sm px-4 py-2 rounded-full border border-white/[0.10] text-white/60 hover:text-white hover:border-white/25 transition-all duration-200"
-      >
-        hello@varunsharma.dev
-      </a>
+      {/* Desktop right side */}
+      <div className="hidden md:flex items-center gap-3">
+        {socialLinks.map(({ href, label, icon: Icon }) => (
+          <a
+            key={href}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={label}
+            className="p-2 rounded-full text-white/50 hover:text-white transition-colors duration-200"
+          >
+            <Icon className="w-4 h-4" />
+          </a>
+        ))}
+        <a
+          href="mailto:hello@varunsharma.dev"
+          className="text-sm px-4 py-2 rounded-full border border-white/[0.10] text-white/60 hover:text-white hover:border-white/25 transition-all duration-200"
+        >
+          hello@varunsharma.dev
+        </a>
+      </div>
 
       {/* Mobile menu button */}
       <button
@@ -83,14 +104,28 @@ export default function Nav() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-sm text-white/50 hover:text-white transition-colors duration-200 py-1"
+                className="text-sm text-white/60 hover:text-white transition-colors duration-200 py-1"
               >
                 {link.label}
               </a>
             ))}
+            <div className="flex items-center gap-4 pt-1">
+              {socialLinks.map(({ href, label, icon: Icon }) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="text-white/50 hover:text-white transition-colors duration-200"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
             <a
               href="mailto:hello@varunsharma.dev"
-              className="text-sm text-indigo-400/70 hover:text-indigo-400 transition-colors duration-200 py-1"
+              className="text-sm text-white/60 hover:text-white transition-colors duration-200 py-1"
             >
               hello@varunsharma.dev
             </a>

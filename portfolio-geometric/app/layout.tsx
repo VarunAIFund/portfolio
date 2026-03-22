@@ -30,7 +30,13 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${dmSans.variable} font-dm bg-[#030303] text-white antialiased`}
       >
-        {children}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-md focus:text-sm focus:font-medium"
+        >
+          Skip to content
+        </a>
+        <div id="main-content">{children}</div>
       </body>
     </html>
   );

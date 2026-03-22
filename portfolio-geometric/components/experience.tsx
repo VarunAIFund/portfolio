@@ -89,7 +89,7 @@ const itemVariants = {
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-28 md:py-40 px-4">
+    <section id="experience" aria-label="Experience" className="relative py-28 md:py-40 px-4">
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-rose-500/[0.03] blur-[130px] rounded-full pointer-events-none -translate-y-1/2" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
@@ -159,11 +159,11 @@ export default function Experience() {
 
                     <div className="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
                       <div className="flex items-center gap-1.5 text-white/55 text-xs">
-                        <Calendar className="w-3 h-3" />
+                        <Calendar className="w-3.5 h-3.5" />
                         {exp.period}
                       </div>
                       <div className="flex items-center gap-1.5 text-white/45 text-xs">
-                        <Building2 className="w-3 h-3" />
+                        <Building2 className="w-3.5 h-3.5" />
                         {exp.location}
                       </div>
                     </div>

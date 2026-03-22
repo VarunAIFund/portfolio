@@ -42,7 +42,7 @@ const itemVariants = {
 
 export default function About() {
   return (
-    <section id="about" className="relative py-28 md:py-40 px-4">
+    <section id="about" aria-label="About" className="relative py-28 md:py-40 px-4">
       {/* Background orb */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-indigo-500/[0.04] blur-[120px] rounded-full pointer-events-none" />
 

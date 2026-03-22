@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, ArrowRight } from "lucide-react";
+import { Mail, MapPin, ArrowRight, Github, Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const containerVariants = {
@@ -20,7 +20,7 @@ const itemVariants = {
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-28 md:py-40 px-4">
+    <section id="contact" aria-label="Contact" className="relative py-28 md:py-40 px-4">
       {/* Gradient atmosphere */}
       <div className="absolute inset-0 bg-gradient-to-t from-indigo-500/[0.04] via-transparent to-transparent pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-rose-500/[0.03] blur-[120px] rounded-full pointer-events-none" />
@@ -86,7 +86,7 @@ export default function Contact() {
           </motion.div>
 
           {/* Footer */}
-          <motion.div
+          <motion.footer
             variants={itemVariants}
             className="pt-8 border-t border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-4"
           >
@@ -97,10 +97,30 @@ export default function Contact() {
               <span className="text-white/25">·</span>
               <span className="text-white/35 text-xs">hello@varunsharma.dev</span>
             </div>
-            <span className="text-white/35 text-xs text-center">
-              UCSD Mathematics & Computer Science · Expected Dec 2026
-            </span>
-          </motion.div>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://github.com/varunaifund"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="text-white/35 hover:text-white/70 transition-colors duration-200"
+              >
+                <Github className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/varun-sharma-891286229/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-white/35 hover:text-white/70 transition-colors duration-200"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <span className="text-white/35 text-xs">
+                UCSD Mathematics & Computer Science · Expected Dec 2026
+              </span>
+            </div>
+          </motion.footer>
         </motion.div>
       </div>
     </section>

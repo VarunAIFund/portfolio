@@ -74,7 +74,7 @@ const itemVariants = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-28 md:py-40 px-4">
+    <section id="skills" aria-label="Skills" className="relative py-28 md:py-40 px-4">
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-cyan-500/[0.03] blur-[120px] rounded-full pointer-events-none -translate-y-1/2" />
 
       <div className="relative z-10 max-w-5xl mx-auto">

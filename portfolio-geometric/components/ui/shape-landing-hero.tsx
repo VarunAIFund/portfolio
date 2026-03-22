@@ -119,7 +119,7 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight font-syne">
+                        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 tracking-tight font-syne">
                             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
                                 {title1}
                             </span>
@@ -139,10 +139,13 @@ function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
+                        className="mb-8"
                     >
-                        <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
-                            UCSD Math & CS · GPA 3.9 · SWE Intern at DeepLearning.AI & AI Fund ·
-                            Incoming Visa SWE Intern
+                        <p className="text-lg sm:text-xl text-white/70 mb-2 font-light tracking-wide">
+                            AI Engineer & Full-Stack Developer
+                        </p>
+                        <p className="text-sm text-white/45 font-light tracking-wide">
+                            UCSD Math & CS · GPA 3.9 · Incoming Visa SWE Intern
                         </p>
                     </motion.div>
 

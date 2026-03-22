@@ -67,7 +67,7 @@ const itemVariants = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-28 md:py-40 px-4">
+    <section id="projects" aria-label="Projects" className="relative py-28 md:py-40 px-4">
       <div className="absolute bottom-0 left-1/4 w-[600px] h-[300px] bg-violet-500/[0.04] blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
