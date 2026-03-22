@@ -14,7 +14,7 @@ const experiences = [
     statusLabel: "Current",
     statusClass: "bg-emerald-500/15 text-emerald-400 border-emerald-500/25",
     gradientClass: "from-white/[0.04]",
-    accentClass: "text-white/50",
+    accentClass: "text-white/65",
     dotClass: "bg-white/40",
     bullets: [
       "Refactored AI Dev Conference site from Vercel v0 to Next.js + React with Supabase edge functions and Google Sheets API",
@@ -31,7 +31,7 @@ const experiences = [
     statusLabel: "Current",
     statusClass: "bg-emerald-500/15 text-emerald-400 border-emerald-500/25",
     gradientClass: "from-white/[0.04]",
-    accentClass: "text-white/50",
+    accentClass: "text-white/65",
     dotClass: "bg-white/40",
     bullets: [
       "Built UltraLink — a RAG candidate search system over 200K profiles with LLM-based two-stage matching and reranking",
@@ -48,7 +48,7 @@ const experiences = [
     statusLabel: "",
     statusClass: "",
     gradientClass: "from-white/[0.04]",
-    accentClass: "text-white/50",
+    accentClass: "text-white/65",
     dotClass: "bg-white/40",
     bullets: [
       "Built PDF processing pipelines using PDFPlumber, LayoutParser, and PaddleOCR for structured LLM data extraction",
@@ -64,7 +64,7 @@ const experiences = [
     statusLabel: "",
     statusClass: "",
     gradientClass: "from-white/[0.04]",
-    accentClass: "text-white/50",
+    accentClass: "text-white/65",
     dotClass: "bg-white/40",
     bullets: [
       "Retrained MobileNetV2 classifier for live robot cube detection; improved accuracy ~10% with data augmentation pipeline",
@@ -162,7 +162,7 @@ export default function Experience() {
                         <Calendar className="w-3 h-3" />
                         {exp.period}
                       </div>
-                      <div className="flex items-center gap-1.5 text-white/25 text-xs">
+                      <div className="flex items-center gap-1.5 text-white/45 text-xs">
                         <Building2 className="w-3 h-3" />
                         {exp.location}
                       </div>

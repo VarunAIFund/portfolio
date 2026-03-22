@@ -1,37 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, MapPin, Award, Layers } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const stats = [
   {
-    icon: GraduationCap,
     label: "Degree",
     value: "B.S. Math & CS",
     sub: "Cognitive Science Minor",
-    color: "text-indigo-400",
   },
   {
-    icon: Award,
     label: "GPA",
     value: "3.9 / 4.0",
     sub: "Provost Honors 2023–2026",
-    color: "text-rose-400",
   },
   {
-    icon: MapPin,
     label: "Based in",
     value: "Milpitas, CA",
     sub: "U.S. Citizen",
-    color: "text-violet-400",
   },
   {
-    icon: Layers,
     label: "Graduating",
     value: "December 2026",
     sub: "Third-year, Senior Standing",
-    color: "text-cyan-400",
   },
 ];
 
@@ -121,7 +112,6 @@ export default function About() {
             {/* Stats */}
             <motion.div variants={containerVariants} className="grid grid-cols-2 gap-4">
               {stats.map((stat) => {
-                const Icon = stat.icon;
                 return (
                   <motion.div
                     key={stat.label}
@@ -133,7 +123,6 @@ export default function About() {
                       "transition-all duration-300"
                     )}
                   >
-                    <Icon className={cn("w-4 h-4 mb-3 opacity-70", stat.color)} />
                     <div className="text-[10px] text-white/40 uppercase tracking-[0.15em] mb-1.5 font-syne">
                       {stat.label}
                     </div>

@@ -134,7 +134,7 @@ export default function Projects() {
                         key={j}
                         className="flex items-start gap-2.5 text-white/55 text-xs leading-relaxed"
                       >
-                        <span className="mt-[7px] w-0.5 h-0.5 rounded-full bg-white/20 flex-shrink-0" />
+                        <span className="mt-[9px] w-1 h-1 rounded-full bg-white/30 flex-shrink-0" />
                         {f}
                       </li>
                     ))}
