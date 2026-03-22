@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-orbitron);
+  --font-mono: var(--font-mono);
+}
+
+:root {
+  --background: #010208;
+  --foreground: #d4dae8;
+  --accent-red: #3b9eff;
+  --accent-blue: #3b82f6;
+  --accent-gold: #c8a84b;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-orbitron), 'Segoe UI', Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Scanline overlay ─────────────────────────────────────────── */
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.06) 2px,
+    rgba(0, 0, 0, 0.06) 4px
+  );
+}
+
+/* ── Keyframes ────────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes crawl {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+@keyframes imperial-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+@keyframes corner-glow {
+  0%, 100% { box-shadow: 0 0 4px rgba(59,158,255,0.3); }
+  50%       { box-shadow: 0 0 10px rgba(59,158,255,0.6); }
+}
+
+/* ── Utility classes ──────────────────────────────────────────── */
+.animate-float       { animation: float 4s ease-in-out infinite; }
+.animate-fade-in-up  { animation: fadeInUp 0.8s ease forwards; }
+.animate-imperial-pulse { animation: imperial-pulse 3s ease-in-out infinite; }
+
+/* Orbitron display text */
+.font-display { font-family: var(--font-orbitron), sans-serif; }
+.font-mono-sw { font-family: var(--font-mono), monospace; }
+
+/* Imperial red glow on text */
+.text-imperial {
+  color: #ff3322;
+  text-shadow: 0 0 12px rgba(59,158,255,0.7), 0 0 30px rgba(59,158,255,0.3);
+}
+
+/* Blue saber glow */
+.text-saber {
+  color: #60a5fa;
+  text-shadow: 0 0 12px rgba(96,165,250,0.7), 0 0 30px rgba(96,165,250,0.3);
+}
+
+/* Corner bracket decoration — add to card containers */
+.hud-card {
+  position: relative;
+}
+.hud-card::before,
+.hud-card::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: rgba(59,158,255,0.5);
+  border-style: solid;
+  pointer-events: none;
+  transition: border-color 0.3s;
+}
+.hud-card::before {
+  top: 0; left: 0;
+  border-width: 1px 0 0 1px;
+}
+.hud-card::after {
+  bottom: 0; right: 0;
+  border-width: 0 1px 1px 0;
+}
+.hud-card:hover::before,
+.hud-card:hover::after {
+  border-color: rgba(59,158,255,0.9);
+}
+
+/* Crawl shimmer for hero name */
+.crawl-text {
+  background: linear-gradient(
+    90deg,
+    #e8eaf0 0%,
+    #ffffff 30%,
+    #3b9eff 50%,
+    #ffffff 70%,
+    #e8eaf0 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: crawl 6s linear infinite;
+}
