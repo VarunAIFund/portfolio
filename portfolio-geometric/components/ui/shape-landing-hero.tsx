@@ -61,10 +61,10 @@ function ElegantShape({
                         "absolute inset-0 rounded-full",
                         "bg-gradient-to-r to-transparent",
                         gradient,
-                        "backdrop-blur-[2px] border-2 border-white/[0.15]",
-                        "shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]",
+                        "backdrop-blur-[2px] border-2 border-white/[0.32]",
+                        "shadow-[0_8px_32px_0_rgba(255,255,255,0.24)]",
                         "after:absolute after:inset-0 after:rounded-full",
-                        "after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]"
+                        "after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.44),transparent_70%)]"
                     )}
                 />
             </motion.div>
@@ -177,11 +177,11 @@ function HeroGeometric({
 
 function GeometricBackground() {
     const { scrollY } = useScroll();
-    const overlayOpacity = useTransform(scrollY, [0, 600], [0, 0.15]);
+    const overlayOpacity = useTransform(scrollY, [0, 600], [0, 0.58]);
 
     return (
         <div className="fixed inset-0 -z-10 bg-[#030303] overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.11] via-transparent to-rose-500/[0.11] blur-3xl" />
 
             {/* Large shapes — hidden on mobile, visible on md+ */}
             <ElegantShape
@@ -189,7 +189,7 @@ function GeometricBackground() {
                 width={600}
                 height={140}
                 rotate={12}
-                gradient="from-indigo-500/[0.15]"
+                gradient="from-indigo-500/[0.32]"
                 className="hidden md:block left-[-5%] top-[20%]"
             />
             <ElegantShape
@@ -197,7 +197,7 @@ function GeometricBackground() {
                 width={500}
                 height={120}
                 rotate={-15}
-                gradient="from-rose-500/[0.15]"
+                gradient="from-rose-500/[0.32]"
                 className="hidden md:block right-[0%] top-[75%]"
             />
 
@@ -207,7 +207,7 @@ function GeometricBackground() {
                 width={300}
                 height={80}
                 rotate={-8}
-                gradient="from-violet-500/[0.10]"
+                gradient="from-violet-500/[0.22]"
                 className="left-[-15%] md:left-[10%] bottom-[8%] md:bottom-[10%] scale-50 md:scale-100"
             />
             <ElegantShape
@@ -215,7 +215,7 @@ function GeometricBackground() {
                 width={200}
                 height={60}
                 rotate={20}
-                gradient="from-amber-500/[0.10]"
+                gradient="from-amber-500/[0.22]"
                 className="right-[-5%] md:right-[20%] top-[8%] md:top-[15%] scale-75 md:scale-100"
             />
             <ElegantShape
@@ -223,7 +223,7 @@ function GeometricBackground() {
                 width={150}
                 height={40}
                 rotate={-25}
-                gradient="from-cyan-500/[0.10]"
+                gradient="from-cyan-500/[0.22]"
                 className="left-[5%] md:left-[25%] top-[3%] md:top-[10%] scale-75 md:scale-100"
             />
 
