@@ -100,7 +100,7 @@ export default function Experience() {
           viewport={{ once: true, margin: "-100px" }}
         >
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="text-xs tracking-[0.2em] text-white/25 uppercase font-syne">
+            <span className="text-xs tracking-[0.2em] text-white/40 uppercase font-syne">
               Experience
             </span>
           </motion.div>
@@ -158,7 +158,7 @@ export default function Experience() {
                     </div>
 
                     <div className="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
-                      <div className="flex items-center gap-1.5 text-white/35 text-xs">
+                      <div className="flex items-center gap-1.5 text-white/55 text-xs">
                         <Calendar className="w-3 h-3" />
                         {exp.period}
                       </div>
@@ -173,7 +173,7 @@ export default function Experience() {
                     {exp.bullets.map((bullet, j) => (
                       <li
                         key={j}
-                        className="flex items-start gap-3 text-white/45 text-sm leading-relaxed"
+                        className="flex items-start gap-3 text-white/65 text-sm leading-relaxed"
                       >
                         <span
                           className={cn(

@@ -78,7 +78,7 @@ export default function Projects() {
           viewport={{ once: true, margin: "-100px" }}
         >
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="text-xs tracking-[0.2em] text-white/25 uppercase font-syne">
+            <span className="text-xs tracking-[0.2em] text-white/40 uppercase font-syne">
               Projects
             </span>
           </motion.div>
@@ -119,12 +119,12 @@ export default function Projects() {
                     <h3 className="font-syne font-bold text-white text-lg leading-snug">
                       {project.title}
                     </h3>
-                    <span className="text-xs text-white/25 shrink-0 mt-1">
+                    <span className="text-xs text-white/45 shrink-0 mt-1">
                       {project.period}
                     </span>
                   </div>
 
-                  <p className="text-white/45 text-sm leading-relaxed mb-5 flex-1">
+                  <p className="text-white/65 text-sm leading-relaxed mb-5 flex-1">
                     {project.description}
                   </p>
 
@@ -132,7 +132,7 @@ export default function Projects() {
                     {project.features.map((f, j) => (
                       <li
                         key={j}
-                        className="flex items-start gap-2.5 text-white/35 text-xs leading-relaxed"
+                        className="flex items-start gap-2.5 text-white/55 text-xs leading-relaxed"
                       >
                         <span className="mt-[7px] w-0.5 h-0.5 rounded-full bg-white/20 flex-shrink-0" />
                         {f}
@@ -144,7 +144,7 @@ export default function Projects() {
                     {project.tech.map((t) => (
                       <span
                         key={t}
-                        className="text-[11px] px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.07] text-white/40"
+                        className="text-[11px] px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.07] text-white/55"
                       >
                         {t}
                       </span>

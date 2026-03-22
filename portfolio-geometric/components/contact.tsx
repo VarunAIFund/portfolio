@@ -33,7 +33,7 @@ export default function Contact() {
           viewport={{ once: true, margin: "-100px" }}
         >
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="text-xs tracking-[0.2em] text-white/25 uppercase font-syne">
+            <span className="text-xs tracking-[0.2em] text-white/40 uppercase font-syne">
               Contact
             </span>
           </motion.div>
@@ -52,13 +52,13 @@ export default function Contact() {
 
           <motion.p
             variants={itemVariants}
-            className="text-white/40 text-lg font-light leading-relaxed max-w-lg mb-12"
+            className="text-white/65 text-lg font-light leading-relaxed max-w-lg mb-12"
           >
             I&apos;m always open to discussing new opportunities, collaborations,
             or just chatting about AI and tech.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-24">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-12">
             <a
               href="mailto:hello@varunsharma.dev"
               className={cn(
@@ -77,7 +77,7 @@ export default function Contact() {
               className={cn(
                 "flex items-center gap-3 px-6 py-4 rounded-full",
                 "bg-white/[0.02] border border-white/[0.06]",
-                "text-white/35 text-sm"
+                "text-white/55 text-sm"
               )}
             >
               <MapPin className="w-4 h-4 text-rose-400/50 flex-shrink-0" />
@@ -91,13 +91,13 @@ export default function Contact() {
             className="pt-8 border-t border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-4"
           >
             <div className="flex items-center gap-3">
-              <span className="font-syne font-bold text-white/20 text-sm tracking-wide">
+              <span className="font-syne font-bold text-white/40 text-sm tracking-wide">
                 Varun Sharma
               </span>
-              <span className="text-white/10">·</span>
-              <span className="text-white/15 text-xs">hello@varunsharma.dev</span>
+              <span className="text-white/25">·</span>
+              <span className="text-white/35 text-xs">hello@varunsharma.dev</span>
             </div>
-            <span className="text-white/15 text-xs text-center">
+            <span className="text-white/35 text-xs text-center">
               UCSD Mathematics & Computer Science · Expected Dec 2026
             </span>
           </motion.div>

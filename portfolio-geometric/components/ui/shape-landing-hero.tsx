@@ -140,7 +140,7 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
+                        <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
                             UCSD Math & CS · GPA 3.9 · SWE Intern at DeepLearning.AI & AI Fund ·
                             Incoming Visa SWE Intern
                         </p>
@@ -154,14 +154,14 @@ function HeroGeometric({
                         className="flex items-center justify-center gap-4"
                     >
                         <a
-                            href="#about"
+                            href="#projects"
                             className="px-6 py-3 rounded-full bg-white/[0.06] border border-white/[0.12] text-white/80 text-sm hover:bg-white/[0.10] hover:border-white/[0.20] transition-all duration-300"
                         >
                             View Work
                         </a>
                         <a
                             href="#contact"
-                            className="px-6 py-3 rounded-full text-white/40 text-sm hover:text-white/70 transition-colors duration-300"
+                            className="px-6 py-3 rounded-full text-white/60 text-sm hover:text-white/80 transition-colors duration-300"
                         >
                             Get in touch →
                         </a>
@@ -174,7 +174,7 @@ function HeroGeometric({
 
 function GeometricBackground() {
     const { scrollY } = useScroll();
-    const overlayOpacity = useTransform(scrollY, [0, 600], [0, 0.6]);
+    const overlayOpacity = useTransform(scrollY, [0, 600], [0, 0.15]);
 
     return (
         <div className="fixed inset-0 -z-10 bg-[#030303] overflow-hidden">

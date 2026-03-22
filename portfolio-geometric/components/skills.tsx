@@ -7,13 +7,13 @@ const skillGroups = [
   {
     category: "Languages",
     gradientClass: "from-indigo-500/[0.15]",
-    tagClass: "border-indigo-500/30 text-indigo-300/70",
+    tagClass: "border-indigo-500/30 text-indigo-300/85",
     skills: ["Python", "TypeScript", "JavaScript", "SQL"],
   },
   {
     category: "AI / ML",
     gradientClass: "from-rose-500/[0.15]",
-    tagClass: "border-rose-500/30 text-rose-300/70",
+    tagClass: "border-rose-500/30 text-rose-300/85",
     skills: [
       "LLMs",
       "RAG",
@@ -32,7 +32,7 @@ const skillGroups = [
   {
     category: "Web / Full-Stack",
     gradientClass: "from-violet-500/[0.15]",
-    tagClass: "border-violet-500/30 text-violet-300/70",
+    tagClass: "border-violet-500/30 text-violet-300/85",
     skills: [
       "React",
       "Next.js",
@@ -46,7 +46,7 @@ const skillGroups = [
   {
     category: "Concepts",
     gradientClass: "from-cyan-500/[0.15]",
-    tagClass: "border-cyan-500/30 text-cyan-300/70",
+    tagClass: "border-cyan-500/30 text-cyan-300/85",
     skills: [
       "Retrieval-Augmented Generation",
       "Structured Outputs",
@@ -85,7 +85,7 @@ export default function Skills() {
           viewport={{ once: true, margin: "-100px" }}
         >
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="text-xs tracking-[0.2em] text-white/25 uppercase font-syne">
+            <span className="text-xs tracking-[0.2em] text-white/40 uppercase font-syne">
               Skills
             </span>
           </motion.div>
@@ -113,7 +113,7 @@ export default function Skills() {
                   )}
                 />
                 <div className="relative z-10">
-                  <h3 className="font-syne text-[10px] uppercase tracking-[0.2em] text-white/35 mb-5">
+                  <h3 className="font-syne text-[10px] uppercase tracking-[0.2em] text-white/55 mb-5">
                     {group.category}
                   </h3>
                   <div className="flex flex-wrap gap-2">

@@ -63,7 +63,7 @@ export default function About() {
           viewport={{ once: true, margin: "-100px" }}
         >
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="text-xs tracking-[0.2em] text-white/25 uppercase font-syne">
+            <span className="text-xs tracking-[0.2em] text-white/40 uppercase font-syne">
               About
             </span>
           </motion.div>
@@ -80,20 +80,20 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
             {/* Bio */}
             <motion.div variants={itemVariants} className="space-y-5">
-              <p className="text-white/55 text-lg leading-relaxed font-light">
+              <p className="text-white/70 text-lg leading-relaxed font-light">
                 I'm a third-year student at{" "}
                 <span className="text-white/80">UC San Diego</span> with senior
                 standing, studying Mathematics & Computer Science with a minor
                 in Cognitive Science.
               </p>
-              <p className="text-white/55 text-lg leading-relaxed font-light">
+              <p className="text-white/70 text-lg leading-relaxed font-light">
                 I currently work{" "}
                 <span className="text-white/80">20 hours/week</span> across two
                 AI-focused internships simultaneously while maintaining a 3.9
                 GPA. I specialize in end-to-end ownership — from data collection
                 and modeling to product UI and deployment.
               </p>
-              <p className="text-white/40 text-base leading-relaxed font-light">
+              <p className="text-white/60 text-base leading-relaxed font-light">
                 Deep interest in applying AI to practical, human-facing
                 problems: recruiting, healthcare, education, and media. Comfort
                 in ambiguous environments where requirements aren't fully
@@ -110,7 +110,7 @@ export default function About() {
                 ].map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-white/40"
+                    className="text-xs px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-white/55"
                   >
                     {tag}
                   </span>
@@ -134,13 +134,13 @@ export default function About() {
                     )}
                   >
                     <Icon className={cn("w-4 h-4 mb-3 opacity-70", stat.color)} />
-                    <div className="text-[10px] text-white/25 uppercase tracking-[0.15em] mb-1.5 font-syne">
+                    <div className="text-[10px] text-white/40 uppercase tracking-[0.15em] mb-1.5 font-syne">
                       {stat.label}
                     </div>
                     <div className="text-white font-syne font-semibold text-sm leading-tight mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-white/35 text-xs leading-relaxed">
+                    <div className="text-white/55 text-xs leading-relaxed">
                       {stat.sub}
                     </div>
                   </motion.div>
