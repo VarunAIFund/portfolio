@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { FadeIn } from "@/components/ui/fade-in";
 
 type PlaceholderConfig = {
   bg: string;
@@ -139,58 +139,39 @@ const projects = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 28 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.25, 0.4, 0.25, 1] },
-  },
-};
-
 export default function Projects() {
   return (
     <section id="projects" aria-label="Projects" className="relative py-16 md:py-24 px-4">
       <div className="absolute bottom-0 left-1/4 w-[600px] h-[300px] bg-violet-500/[0.04] blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <motion.div variants={itemVariants} className="mb-5">
-            <span className="text-xs tracking-[0.2em] text-white/50 uppercase font-syne">
-              Projects
-            </span>
-          </motion.div>
+        <FadeIn delay={0} className="mb-5">
+          <span className="text-xs tracking-[0.2em] text-white/50 uppercase font-syne">
+            Projects
+          </span>
+        </FadeIn>
 
-          <motion.h2
-            variants={itemVariants}
-            className="font-syne text-4xl md:text-6xl font-bold mb-10 tracking-tight"
-          >
+        <FadeIn delay={0.1}>
+          <h2 className="font-syne text-4xl md:text-6xl font-bold mb-10 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
               Selected Work
             </span>
-          </motion.h2>
+          </h2>
+        </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            {projects.map((project) => (
-              <motion.div
-                key={project.title}
-                variants={itemVariants}
+        <div className="grid md:grid-cols-2 gap-4">
+          {projects.map((project, i) => (
+            <FadeIn
+              key={project.title}
+              delay={0.15 + i * 0.08}
+              className={project.wide ? "md:col-span-2" : ""}
+            >
+              <div
                 className={cn(
-                  "group relative rounded-2xl overflow-hidden",
+                  "group relative rounded-2xl overflow-hidden h-full",
                   "bg-white/[0.02] border border-white/[0.06]",
                   "hover:bg-white/[0.035] hover:border-white/[0.10]",
-                  "transition-all duration-300",
-                  project.wide ? "md:col-span-2" : ""
+                  "transition-all duration-300"
                 )}
               >
                 {/* Thumbnail */}
@@ -210,7 +191,6 @@ export default function Projects() {
                   ) : (
                     <PlaceholderThumb config={placeholders[project.title]} />
                   )}
-                  {/* Subtle bottom fade so card content bleeds in cleanly */}
                   <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-[#030303]/60 to-transparent pointer-events-none" />
                 </div>
 
@@ -278,10 +258,10 @@ export default function Projects() {
                     ))}
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   );

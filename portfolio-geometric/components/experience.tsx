@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Building2, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { FadeIn } from "@/components/ui/fade-in";
 
 const experiences = [
   {
@@ -73,52 +73,30 @@ const experiences = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: [0.25, 0.4, 0.25, 1] },
-  },
-};
-
 export default function Experience() {
   return (
     <section id="experience" aria-label="Experience" className="relative py-16 md:py-24 px-4">
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-rose-500/[0.03] blur-[130px] rounded-full pointer-events-none -translate-y-1/2" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <motion.div variants={itemVariants} className="mb-5">
-            <span className="text-xs tracking-[0.2em] text-white/50 uppercase font-syne">
-              Experience
-            </span>
-          </motion.div>
+        <FadeIn delay={0} className="mb-5">
+          <span className="text-xs tracking-[0.2em] text-white/50 uppercase font-syne">
+            Experience
+          </span>
+        </FadeIn>
 
-          <motion.h2
-            variants={itemVariants}
-            className="font-syne text-4xl md:text-6xl font-bold mb-8 md:mb-10 tracking-tight"
-          >
+        <FadeIn delay={0.1}>
+          <h2 className="font-syne text-4xl md:text-6xl font-bold mb-8 md:mb-10 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
               Where I&apos;ve Worked
             </span>
-          </motion.h2>
+          </h2>
+        </FadeIn>
 
-          <div className="space-y-3">
-            {experiences.map((exp) => (
-              <motion.div
-                key={exp.company}
-                variants={itemVariants}
+        <div className="space-y-3">
+          {experiences.map((exp, i) => (
+            <FadeIn key={exp.company} delay={0.15 + i * 0.1}>
+              <div
                 className={cn(
                   "group relative rounded-2xl p-6 md:p-8 overflow-hidden",
                   "bg-white/[0.02] border border-white/[0.06]",
@@ -186,10 +164,10 @@ export default function Experience() {
                     ))}
                   </ul>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   );

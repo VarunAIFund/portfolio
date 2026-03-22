@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/fade-in";
 
 const skillGroups = [
   {
@@ -53,54 +53,30 @@ const skillGroups = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.4, 0.25, 1] },
-  },
-};
-
 export default function Skills() {
   return (
     <section id="skills" aria-label="Skills" className="relative py-16 md:py-24 px-4">
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-indigo-500/[0.03] blur-[120px] rounded-full pointer-events-none -translate-y-1/2" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <motion.div variants={itemVariants} className="mb-5">
-            <span className="text-xs tracking-[0.2em] text-white/50 uppercase font-syne">
-              Skills
-            </span>
-          </motion.div>
+        <FadeIn delay={0} className="mb-5">
+          <span className="text-xs tracking-[0.2em] text-white/50 uppercase font-syne">
+            Skills
+          </span>
+        </FadeIn>
 
-          <motion.h2
-            variants={itemVariants}
-            className="font-syne text-4xl md:text-6xl font-bold mb-8 md:mb-10 tracking-tight"
-          >
+        <FadeIn delay={0.1}>
+          <h2 className="font-syne text-4xl md:text-6xl font-bold mb-8 md:mb-10 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
               Tech Stack
             </span>
-          </motion.h2>
+          </h2>
+        </FadeIn>
 
-          <div className="grid sm:grid-cols-2 gap-5">
-            {skillGroups.map((group) => (
-              <motion.div
-                key={group.category}
-                variants={itemVariants}
-                className="relative rounded-2xl p-7 bg-white/[0.03] border border-white/[0.07] overflow-hidden"
-              >
+        <div className="grid sm:grid-cols-2 gap-5">
+          {skillGroups.map((group, i) => (
+            <FadeIn key={group.category} delay={0.15 + i * 0.1}>
+              <div className="relative rounded-2xl p-7 bg-white/[0.03] border border-white/[0.07] overflow-hidden h-full">
                 <div
                   className={`absolute inset-0 opacity-25 bg-gradient-to-br ${group.gradientClass} to-transparent`}
                 />
@@ -119,10 +95,10 @@ export default function Skills() {
                     ))}
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   );

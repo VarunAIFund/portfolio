@@ -1,22 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Mail, MapPin, ArrowRight, GithubIcon, Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.25, 0.4, 0.25, 1] },
-  },
-};
+import { FadeIn } from "@/components/ui/fade-in";
 
 export default function Contact() {
   return (
@@ -25,36 +11,29 @@ export default function Contact() {
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-white/[0.02] blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <motion.div variants={itemVariants} className="mb-5">
-            <span className="text-xs tracking-[0.2em] text-white/50 uppercase font-syne">
-              Contact
-            </span>
-          </motion.div>
+        <FadeIn delay={0} className="mb-5">
+          <span className="text-xs tracking-[0.2em] text-white/50 uppercase font-syne">
+            Contact
+          </span>
+        </FadeIn>
 
-          <motion.h2
-            variants={itemVariants}
-            className="font-syne text-4xl md:text-6xl font-bold mb-5 tracking-tight"
-          >
+        <FadeIn delay={0.1}>
+          <h2 className="font-syne text-4xl md:text-6xl font-bold mb-5 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
               Let&apos;s Build Something
             </span>
-          </motion.h2>
+          </h2>
+        </FadeIn>
 
-          <motion.p
-            variants={itemVariants}
-            className="text-white/70 text-lg font-light leading-relaxed max-w-lg mb-10"
-          >
+        <FadeIn delay={0.2}>
+          <p className="text-white/70 text-lg font-light leading-relaxed max-w-lg mb-10">
             I&apos;m always open to discussing new opportunities, collaborations,
             or just chatting about AI and tech.
-          </motion.p>
+          </p>
+        </FadeIn>
 
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-10">
+        <FadeIn delay={0.25}>
+          <div className="flex flex-col sm:flex-row gap-4 mb-10">
             <a
               href="mailto:hello@varunsharma.dev"
               className={cn(
@@ -79,13 +58,12 @@ export default function Contact() {
               <MapPin className="w-4 h-4 text-white/45 flex-shrink-0" />
               Bay Area, CA
             </div>
-          </motion.div>
+          </div>
+        </FadeIn>
 
-          {/* Footer */}
-          <motion.footer
-            variants={itemVariants}
-            className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4"
-          >
+        {/* Footer */}
+        <FadeIn delay={0.35}>
+          <footer className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <span className="font-syne font-bold text-white/50 text-sm tracking-wide">
                 Varun Sharma
@@ -116,8 +94,8 @@ export default function Contact() {
                 UCSD Mathematics & Computer Science · Expected Dec 2026
               </span>
             </div>
-          </motion.footer>
-        </motion.div>
+          </footer>
+        </FadeIn>
       </div>
     </section>
   );
