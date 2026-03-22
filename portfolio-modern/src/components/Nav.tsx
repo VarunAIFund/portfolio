@@ -1,122 +1,173 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
+import { cn } from "@/lib/utils";
 
-const links = [
+const navLinks = [
+  { label: "About", href: "#hero" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
+const sectionIds = ["hero", "experience", "projects", "skills", "contact"];
+
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
+  const [visible, setVisible] = useState(true);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const lastY = useRef(0);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (y) => {
+    const diff = y - lastY.current;
+    if (y < 80) {
+      setVisible(true);
+    } else if (diff > 6) {
+      setVisible(false);
+      setMobileOpen(false);
+    } else if (diff < -6) {
+      setVisible(true);
+    }
+    lastY.current = y;
+  });
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const observers: IntersectionObserver[] = [];
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { rootMargin: "-40% 0px -55% 0px" }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
+  const handleLinkClick = (href: string) => {
+    setMobileOpen(false);
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <>
-      <motion.header
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "py-3 bg-[#050508]/80 backdrop-blur-xl border-b border-white/[0.06]" : "py-6"
-        }`}
-      >
-        <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+    <motion.header
+      className="fixed top-0 left-0 right-0 z-50"
+      animate={{ y: visible ? 0 : -100, opacity: visible ? 1 : 0 }}
+      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <div className="mx-auto max-w-6xl px-4 pt-4">
+        <div className="glass-strong rounded-2xl px-5 py-3 flex items-center justify-between">
           {/* Logo */}
-          <a
-            href="#"
-            className="flex items-center gap-2 group"
-            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+          <motion.div
+            className="flex items-center gap-2 cursor-pointer select-none"
+            whileHover={{ scale: 1.04 }}
+            onClick={() => handleLinkClick("#hero")}
           >
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-violet-600 to-violet-400 flex items-center justify-center text-white font-bold text-sm group-hover:shadow-lg group-hover:shadow-violet-500/30 transition-all duration-300">
-              VS
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-cyan-500 flex items-center justify-center">
+              <span className="text-white font-black text-sm tracking-tighter">VS</span>
             </div>
-            <span className="text-sm font-semibold text-zinc-300 hidden sm:block group-hover:text-white transition-colors">
+            <span className="font-semibold text-sm text-white/80 hidden sm:block">
               Varun Sharma
             </span>
-          </a>
+          </motion.div>
 
-          {/* Desktop links */}
-          <ul className="hidden md:flex items-center gap-8">
-            {links.map((l) => (
-              <li key={l.label}>
-                <a
-                  href={l.href}
-                  className="text-sm text-zinc-400 hover:text-white transition-colors duration-200 relative group"
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-1 relative">
+            {navLinks.map((link) => {
+              const sectionId = link.href.replace("#", "");
+              const isActive = activeSection === sectionId;
+              return (
+                <button
+                  key={link.label}
+                  onClick={() => handleLinkClick(link.href)}
+                  className={cn(
+                    "relative px-4 py-2 text-sm rounded-xl transition-colors duration-200 font-medium",
+                    isActive ? "text-white" : "text-zinc-500 hover:text-zinc-200"
+                  )}
                 >
-                  {l.label}
-                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-violet-400 group-hover:w-full transition-all duration-300" />
-                </a>
-              </li>
-            ))}
-          </ul>
+                  {isActive && (
+                    <motion.div
+                      layoutId="nav-pill"
+                      className="absolute inset-0 bg-white/[0.07] rounded-xl border border-white/[0.08]"
+                      transition={{ type: "spring", stiffness: 380, damping: 35 }}
+                    />
+                  )}
+                  <span className="relative z-10">{link.label}</span>
+                </button>
+              );
+            })}
+          </nav>
 
-          {/* CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          {/* CTA + Mobile toggle */}
+          <div className="flex items-center gap-3">
             <a
               href="mailto:vas001@ucsd.edu"
-              className="px-4 py-2 rounded-full text-sm font-medium border border-violet-500/40 text-violet-400 hover:bg-violet-500/10 hover:border-violet-400 transition-all duration-200"
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-violet-500/20"
             >
               Hire Me
             </a>
-          </div>
-
-          {/* Mobile hamburger */}
-          <button
-            className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </nav>
-      </motion.header>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-[#050508]/95 backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-8"
-          >
-            {links.map((l, i) => (
-              <motion.a
-                key={l.label}
-                href={l.href}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.07 }}
-                className="text-3xl font-bold text-zinc-300 hover:text-white transition-colors"
-                onClick={() => setMenuOpen(false)}
-              >
-                {l.label}
-              </motion.a>
-            ))}
-            <motion.a
-              href="mailto:vas001@ucsd.edu"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="mt-4 px-6 py-3 rounded-full bg-violet-600 text-white font-medium"
-              onClick={() => setMenuOpen(false)}
+            <button
+              className="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 rounded-xl hover:bg-white/5 transition-colors"
+              onClick={() => setMobileOpen((v) => !v)}
+              aria-label="Toggle menu"
             >
-              Get in Touch
-            </motion.a>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+              <motion.span
+                animate={mobileOpen ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
+                className="block w-5 h-px bg-zinc-400 origin-center"
+              />
+              <motion.span
+                animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
+                className="block w-5 h-px bg-zinc-400"
+              />
+              <motion.span
+                animate={mobileOpen ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }}
+                className="block w-5 h-px bg-zinc-400 origin-center"
+              />
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile dropdown */}
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0, y: -8 }}
+              animate={{ opacity: 1, height: "auto", y: 0 }}
+              exit={{ opacity: 0, height: 0, y: -8 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="overflow-hidden mt-2"
+            >
+              <div className="glass-strong rounded-2xl p-3 flex flex-col gap-1">
+                {navLinks.map((link) => (
+                  <button
+                    key={link.label}
+                    onClick={() => handleLinkClick(link.href)}
+                    className="w-full text-left px-4 py-3 rounded-xl text-sm text-zinc-300 hover:text-white hover:bg-white/[0.06] transition-all duration-200 font-medium"
+                  >
+                    {link.label}
+                  </button>
+                ))}
+                <div className="h-px bg-white/[0.06] my-1" />
+                <a
+                  href="mailto:vas001@ucsd.edu"
+                  className="px-4 py-3 rounded-xl text-sm font-semibold text-center bg-violet-600 hover:bg-violet-500 text-white transition-colors"
+                >
+                  Hire Me
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.header>
   );
 }

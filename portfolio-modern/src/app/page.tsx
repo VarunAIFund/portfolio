@@ -10,22 +10,9 @@ export default function Home() {
     <main className="bg-[#050508] text-white min-h-screen overflow-x-hidden">
       <Nav />
       <Hero />
-
-      {/* Divider gradient */}
-      <div className="h-px bg-gradient-to-r from-transparent via-violet-500/20 to-transparent mx-6" />
-
       <Experience />
-
-      <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent mx-6" />
-
       <Projects />
-
-      <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent mx-6" />
-
       <Skills />
-
-      <div className="h-px bg-gradient-to-r from-transparent via-violet-500/20 to-transparent mx-6" />
-
       <Contact />
     </main>
   );
