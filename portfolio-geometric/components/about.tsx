@@ -16,7 +16,7 @@ const stats = [
   },
   {
     label: "Based in",
-    value: "Milpitas, CA",
+    value: "Bay Area, CA",
     sub: "U.S. Citizen",
   },
   {

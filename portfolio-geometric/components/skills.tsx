@@ -1,19 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 
 const skillGroups = [
   {
     category: "Languages",
-    gradientClass: "from-indigo-500/[0.15]",
-    tagClass: "border-indigo-500/30 text-indigo-300/85",
+    gradientClass: "from-white/[0.04]",
     skills: ["Python", "TypeScript", "JavaScript", "SQL"],
   },
   {
     category: "AI / ML",
-    gradientClass: "from-rose-500/[0.15]",
-    tagClass: "border-rose-500/30 text-rose-300/85",
+    gradientClass: "from-white/[0.04]",
     skills: [
       "LLMs",
       "RAG",
@@ -31,8 +28,7 @@ const skillGroups = [
   },
   {
     category: "Web / Full-Stack",
-    gradientClass: "from-violet-500/[0.15]",
-    tagClass: "border-violet-500/30 text-violet-300/85",
+    gradientClass: "from-white/[0.04]",
     skills: [
       "React",
       "Next.js",
@@ -45,8 +41,7 @@ const skillGroups = [
   },
   {
     category: "Concepts",
-    gradientClass: "from-cyan-500/[0.15]",
-    tagClass: "border-cyan-500/30 text-cyan-300/85",
+    gradientClass: "from-white/[0.04]",
     skills: [
       "Retrieval-Augmented Generation",
       "Structured Outputs",
@@ -75,7 +70,7 @@ const itemVariants = {
 export default function Skills() {
   return (
     <section id="skills" aria-label="Skills" className="relative py-28 md:py-40 px-4">
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-cyan-500/[0.03] blur-[120px] rounded-full pointer-events-none -translate-y-1/2" />
+      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-indigo-500/[0.03] blur-[120px] rounded-full pointer-events-none -translate-y-1/2" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
         <motion.div
@@ -94,7 +89,7 @@ export default function Skills() {
             variants={itemVariants}
             className="font-syne text-4xl md:text-6xl font-bold mb-16 tracking-tight"
           >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-white/90 to-indigo-300">
+            <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
               Tech Stack
             </span>
           </motion.h2>
@@ -107,10 +102,7 @@ export default function Skills() {
                 className="relative rounded-2xl p-7 bg-white/[0.02] border border-white/[0.06] overflow-hidden"
               >
                 <div
-                  className={cn(
-                    "absolute inset-0 opacity-25",
-                    `bg-gradient-to-br ${group.gradientClass} to-transparent`
-                  )}
+                  className={`absolute inset-0 opacity-25 bg-gradient-to-br ${group.gradientClass} to-transparent`}
                 />
                 <div className="relative z-10">
                   <h3 className="font-syne text-[10px] uppercase tracking-[0.2em] text-white/55 mb-5">
@@ -120,10 +112,7 @@ export default function Skills() {
                     {group.skills.map((skill) => (
                       <span
                         key={skill}
-                        className={cn(
-                          "text-xs px-3 py-1.5 rounded-full border bg-white/[0.03]",
-                          group.tagClass
-                        )}
+                        className="text-xs px-3 py-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] text-white/60"
                       >
                         {skill}
                       </span>

@@ -81,7 +81,7 @@ export default function Contact() {
               )}
             >
               <MapPin className="w-4 h-4 text-rose-400/50 flex-shrink-0" />
-              Milpitas, CA · U.S. Citizen
+              Bay Area, CA
             </div>
           </motion.div>
 
