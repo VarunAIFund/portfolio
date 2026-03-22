@@ -32,7 +32,7 @@ export default function Nav() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center px-6 md:px-12 py-5 transition-all duration-500 ${
         scrolled
           ? "bg-[#030303]/80 backdrop-blur-md border-b border-white/[0.06]"
           : "bg-transparent"
@@ -40,13 +40,13 @@ export default function Nav() {
     >
       <a
         href="#hero"
-        className="font-syne font-bold text-lg tracking-tight text-white"
+        className="font-syne font-bold text-lg tracking-tight text-white w-24"
       >
         VS
       </a>
 
-      {/* Desktop links */}
-      <div className="hidden md:flex items-center gap-8">
+      {/* Desktop links — centered */}
+      <div className="hidden md:flex items-center justify-center gap-8 flex-1">
         {links.map((link) => (
           <a
             key={link.href}
@@ -59,7 +59,7 @@ export default function Nav() {
       </div>
 
       {/* Desktop right side */}
-      <div className="hidden md:flex items-center gap-3">
+      <div className="hidden md:flex items-center justify-end gap-3 w-24">
         {socialLinks.map(({ href, label, icon: Icon }) => (
           <a
             key={href}
@@ -72,12 +72,6 @@ export default function Nav() {
             <Icon className="w-4 h-4" />
           </a>
         ))}
-        <a
-          href="mailto:hello@varunsharma.dev"
-          className="text-sm px-4 py-2 rounded-full border border-white/[0.10] text-white/60 hover:text-white hover:border-white/25 transition-all duration-200"
-        >
-          hello@varunsharma.dev
-        </a>
       </div>
 
       {/* Mobile menu button */}
@@ -123,12 +117,6 @@ export default function Nav() {
                 </a>
               ))}
             </div>
-            <a
-              href="mailto:hello@varunsharma.dev"
-              className="text-sm text-white/60 hover:text-white transition-colors duration-200 py-1"
-            >
-              hello@varunsharma.dev
-            </a>
           </div>
         </motion.div>
       )}
