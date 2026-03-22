@@ -2,29 +2,49 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin } from "lucide-react";
+import { GithubIcon, Linkedin } from "lucide-react";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about", label: "About", sectionId: "about" },
+  { href: "#experience", label: "Experience", sectionId: "experience" },
+  { href: "#projects", label: "Projects", sectionId: "projects" },
+  { href: "#skills", label: "Skills", sectionId: "skills" },
+  { href: "#contact", label: "Contact", sectionId: "contact" },
 ];
 
 const socialLinks = [
-  { href: "https://github.com/varunaifund", label: "GitHub", icon: Github },
+  { href: "https://github.com/varunaifund", label: "GitHub", icon: GithubIcon },
   { href: "https://www.linkedin.com/in/varun-sharma-891286229/", label: "LinkedIn", icon: Linkedin },
 ];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = ["hero", "about", "experience", "projects", "skills", "contact"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-10% 0px -85% 0px" }
+    );
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -47,19 +67,32 @@ export default function Nav() {
 
       {/* Desktop links — centered */}
       <div className="hidden md:flex items-center justify-center gap-8 flex-1">
-        {links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className="text-sm text-white/60 hover:text-white transition-colors duration-200 tracking-wide"
-          >
-            {link.label}
-          </a>
-        ))}
+        {links.map((link) => {
+          const isActive = activeSection === link.sectionId;
+          return (
+            <a
+              key={link.href}
+              href={link.href}
+              className={`text-sm tracking-wide transition-colors duration-200 ${
+                isActive ? "text-white" : "text-white/60 hover:text-white"
+              }`}
+            >
+              {link.label}
+            </a>
+          );
+        })}
       </div>
 
       {/* Desktop right side */}
-      <div className="hidden md:flex items-center justify-end gap-3 w-24">
+      <div className="hidden md:flex items-center justify-end gap-3 w-36">
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-white/55 hover:text-white/85 transition-colors duration-200 tracking-wide"
+        >
+          Resume ↗
+        </a>
         {socialLinks.map(({ href, label, icon: Icon }) => (
           <a
             key={href}
@@ -76,7 +109,7 @@ export default function Nav() {
 
       {/* Mobile menu button */}
       <button
-        className="md:hidden flex flex-col gap-1.5 p-2"
+        className="md:hidden flex flex-col gap-1.5 p-2 ml-auto"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle menu"
       >
@@ -98,11 +131,19 @@ export default function Nav() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-sm text-white/60 hover:text-white transition-colors duration-200 py-1"
+                className="text-sm text-white/65 hover:text-white transition-colors duration-200 py-1"
               >
                 {link.label}
               </a>
             ))}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-white/65 hover:text-white transition-colors duration-200 py-1"
+            >
+              Resume ↗
+            </a>
             <div className="flex items-center gap-4 pt-1">
               {socialLinks.map(({ href, label, icon: Icon }) => (
                 <a
@@ -111,7 +152,7 @@ export default function Nav() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="text-white/50 hover:text-white transition-colors duration-200"
+                  className="text-white/55 hover:text-white transition-colors duration-200"
                 >
                   <Icon className="w-4 h-4" />
                 </a>

@@ -20,8 +20,7 @@ const itemVariants = {
 
 export default function Contact() {
   return (
-    <section id="contact" aria-label="Contact" className="relative py-28 md:py-40 px-4">
-      {/* Gradient atmosphere */}
+    <section id="contact" aria-label="Contact" className="relative py-16 md:py-24 px-4">
       <div className="absolute inset-0 bg-gradient-to-t from-white/[0.02] via-transparent to-transparent pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-white/[0.02] blur-[120px] rounded-full pointer-events-none" />
 
@@ -32,8 +31,8 @@ export default function Contact() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <motion.div variants={itemVariants} className="mb-6">
-            <span className="text-xs tracking-[0.2em] text-white/40 uppercase font-syne">
+          <motion.div variants={itemVariants} className="mb-5">
+            <span className="text-xs tracking-[0.2em] text-white/50 uppercase font-syne">
               Contact
             </span>
           </motion.div>
@@ -49,13 +48,13 @@ export default function Contact() {
 
           <motion.p
             variants={itemVariants}
-            className="text-white/65 text-lg font-light leading-relaxed max-w-lg mb-12"
+            className="text-white/70 text-lg font-light leading-relaxed max-w-lg mb-10"
           >
             I&apos;m always open to discussing new opportunities, collaborations,
             or just chatting about AI and tech.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-12">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-10">
             <a
               href="mailto:hello@varunsharma.dev"
               className={cn(
@@ -65,19 +64,19 @@ export default function Contact() {
                 "transition-all duration-300"
               )}
             >
-              <Mail className="w-4 h-4 text-white/50 flex-shrink-0" />
-              <span className="text-sm text-white/80">hello@varunsharma.dev</span>
-              <ArrowRight className="w-4 h-4 ml-auto text-white/25 group-hover:translate-x-1 group-hover:text-white/50 transition-all duration-200" />
+              <Mail className="w-4 h-4 text-white/55 flex-shrink-0" />
+              <span className="text-sm text-white/85">hello@varunsharma.dev</span>
+              <ArrowRight className="w-4 h-4 ml-auto text-white/30 group-hover:translate-x-1 group-hover:text-white/55 transition-all duration-200" />
             </a>
 
             <div
               className={cn(
                 "flex items-center gap-3 px-6 py-4 rounded-full",
-                "bg-white/[0.02] border border-white/[0.06]",
-                "text-white/55 text-sm"
+                "bg-white/[0.02] border border-white/[0.07]",
+                "text-white/60 text-sm"
               )}
             >
-              <MapPin className="w-4 h-4 text-white/40 flex-shrink-0" />
+              <MapPin className="w-4 h-4 text-white/45 flex-shrink-0" />
               Bay Area, CA
             </div>
           </motion.div>
@@ -85,14 +84,14 @@ export default function Contact() {
           {/* Footer */}
           <motion.footer
             variants={itemVariants}
-            className="pt-8 border-t border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-4"
+            className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4"
           >
             <div className="flex items-center gap-3">
-              <span className="font-syne font-bold text-white/40 text-sm tracking-wide">
+              <span className="font-syne font-bold text-white/50 text-sm tracking-wide">
                 Varun Sharma
               </span>
-              <span className="text-white/25">·</span>
-              <span className="text-white/35 text-xs">hello@varunsharma.dev</span>
+              <span className="text-white/30">·</span>
+              <span className="text-white/45 text-xs">hello@varunsharma.dev</span>
             </div>
             <div className="flex items-center gap-4">
               <a
@@ -100,7 +99,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="text-white/35 hover:text-white/70 transition-colors duration-200"
+                className="text-white/45 hover:text-white/75 transition-colors duration-200"
               >
                 <GithubIcon className="w-4 h-4" />
               </a>
@@ -109,11 +108,11 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-white/35 hover:text-white/70 transition-colors duration-200"
+                className="text-white/45 hover:text-white/75 transition-colors duration-200"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
-              <span className="text-white/35 text-xs">
+              <span className="text-white/45 text-xs">
                 UCSD Mathematics & Computer Science · Expected Dec 2026
               </span>
             </div>

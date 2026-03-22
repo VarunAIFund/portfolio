@@ -89,7 +89,7 @@ const itemVariants = {
 
 export default function Experience() {
   return (
-    <section id="experience" aria-label="Experience" className="relative py-28 md:py-40 px-4">
+    <section id="experience" aria-label="Experience" className="relative py-16 md:py-24 px-4">
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-rose-500/[0.03] blur-[130px] rounded-full pointer-events-none -translate-y-1/2" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
@@ -99,15 +99,15 @@ export default function Experience() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <motion.div variants={itemVariants} className="mb-6">
-            <span className="text-xs tracking-[0.2em] text-white/40 uppercase font-syne">
+          <motion.div variants={itemVariants} className="mb-5">
+            <span className="text-xs tracking-[0.2em] text-white/50 uppercase font-syne">
               Experience
             </span>
           </motion.div>
 
           <motion.h2
             variants={itemVariants}
-            className="font-syne text-4xl md:text-6xl font-bold mb-16 tracking-tight"
+            className="font-syne text-4xl md:text-6xl font-bold mb-8 md:mb-10 tracking-tight"
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
               Where I&apos;ve Worked
@@ -173,7 +173,7 @@ export default function Experience() {
                     {exp.bullets.map((bullet, j) => (
                       <li
                         key={j}
-                        className="flex items-start gap-3 text-white/65 text-sm leading-relaxed"
+                        className="flex items-start gap-3 text-white/70 text-sm leading-relaxed"
                       >
                         <span
                           className={cn(

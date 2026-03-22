@@ -158,13 +158,13 @@ function HeroGeometric({
                     >
                         <a
                             href="#projects"
-                            className="px-6 py-3 rounded-full bg-white/[0.06] border border-white/[0.12] text-white/80 text-sm hover:bg-white/[0.10] hover:border-white/[0.20] transition-all duration-300"
+                            className="px-6 py-3 rounded-full bg-white/[0.08] border border-white/[0.15] text-white/90 text-sm hover:bg-white/[0.13] hover:border-white/[0.25] transition-all duration-300"
                         >
                             View Work
                         </a>
                         <a
                             href="#contact"
-                            className="px-6 py-3 rounded-full text-white/60 text-sm hover:text-white/80 transition-colors duration-300"
+                            className="px-6 py-3 rounded-full bg-white/[0.03] border border-white/[0.10] text-white/70 text-sm hover:bg-white/[0.07] hover:border-white/[0.18] hover:text-white/90 transition-all duration-300"
                         >
                             Get in touch →
                         </a>
