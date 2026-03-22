@@ -1,5 +1,5 @@
 import Nav from "@/components/nav";
-import { HeroGeometric } from "@/components/ui/shape-landing-hero";
+import { HeroGeometric, GeometricBackground } from "@/components/ui/shape-landing-hero";
 import About from "@/components/about";
 import Experience from "@/components/experience";
 import Projects from "@/components/projects";
@@ -8,7 +8,8 @@ import Contact from "@/components/contact";
 
 export default function Home() {
   return (
-    <main className="bg-[#030303] min-h-screen">
+    <main className="min-h-screen">
+      <GeometricBackground />
       <Nav />
       <section id="hero">
         <HeroGeometric
