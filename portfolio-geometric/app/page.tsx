@@ -1,5 +1,8 @@
 import Nav from "@/components/nav";
-import { HeroGeometric, GeometricBackground } from "@/components/ui/shape-landing-hero";
+import {
+  HeroGeometric,
+  GeometricBackground,
+} from "@/components/ui/shape-landing-hero";
 import About from "@/components/about";
 import Experience from "@/components/experience";
 import Projects from "@/components/projects";
@@ -12,11 +15,7 @@ export default function Home() {
       <GeometricBackground />
       <Nav />
       <section id="hero">
-        <HeroGeometric
-          badge="AI Engineer & Developer"
-          title1="Varun Sharma"
-          title2="Building Intelligent Systems"
-        />
+        <HeroGeometric title1="Varun Sharma" />
       </section>
       <About />
       <Experience />

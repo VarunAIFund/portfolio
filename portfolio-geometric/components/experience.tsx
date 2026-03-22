@@ -13,9 +13,9 @@ const experiences = [
     status: "current",
     statusLabel: "Current",
     statusClass: "bg-emerald-500/15 text-emerald-400 border-emerald-500/25",
-    gradientClass: "from-indigo-500/[0.15]",
-    accentClass: "text-indigo-400",
-    dotClass: "bg-indigo-400",
+    gradientClass: "from-white/[0.04]",
+    accentClass: "text-white/50",
+    dotClass: "bg-white/40",
     bullets: [
       "Refactored AI Dev Conference site from Vercel v0 to Next.js + React with Supabase edge functions and Google Sheets API",
       "Reduced total page transfer size from ~19 MB to ~3 MB by compressing images and removing heavy animations",
@@ -30,9 +30,9 @@ const experiences = [
     status: "current",
     statusLabel: "Current",
     statusClass: "bg-emerald-500/15 text-emerald-400 border-emerald-500/25",
-    gradientClass: "from-rose-500/[0.15]",
-    accentClass: "text-rose-400",
-    dotClass: "bg-rose-400",
+    gradientClass: "from-white/[0.04]",
+    accentClass: "text-white/50",
+    dotClass: "bg-white/40",
     bullets: [
       "Built UltraLink — a RAG candidate search system over 200K profiles with LLM-based two-stage matching and reranking",
       "Implemented fit rationale generation for strong matches; optimized costs using GPT-4o-mini with selective heavy-model reranking",
@@ -47,9 +47,9 @@ const experiences = [
     status: "past",
     statusLabel: "",
     statusClass: "",
-    gradientClass: "from-violet-500/[0.15]",
-    accentClass: "text-violet-400",
-    dotClass: "bg-violet-400",
+    gradientClass: "from-white/[0.04]",
+    accentClass: "text-white/50",
+    dotClass: "bg-white/40",
     bullets: [
       "Built PDF processing pipelines using PDFPlumber, LayoutParser, and PaddleOCR for structured LLM data extraction",
       "Generated annotated visualizations to debug parsing errors across diverse multi-layout document types",
@@ -63,9 +63,9 @@ const experiences = [
     status: "past",
     statusLabel: "",
     statusClass: "",
-    gradientClass: "from-cyan-500/[0.15]",
-    accentClass: "text-cyan-400",
-    dotClass: "bg-cyan-400",
+    gradientClass: "from-white/[0.04]",
+    accentClass: "text-white/50",
+    dotClass: "bg-white/40",
     bullets: [
       "Retrained MobileNetV2 classifier for live robot cube detection; improved accuracy ~10% with data augmentation pipeline",
       "Simulated lighting changes, motion blur, and sensor grain via OpenCV transforms; used confidence thresholding for robustness",
@@ -110,10 +110,7 @@ export default function Experience() {
             className="font-syne text-4xl md:text-6xl font-bold mb-16 tracking-tight"
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
-              Where I&apos;ve{" "}
-            </span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300">
-              Worked
+              Where I&apos;ve Worked
             </span>
           </motion.h2>
 
