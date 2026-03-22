@@ -22,8 +22,8 @@ export default function Contact() {
   return (
     <section id="contact" aria-label="Contact" className="relative py-28 md:py-40 px-4">
       {/* Gradient atmosphere */}
-      <div className="absolute inset-0 bg-gradient-to-t from-indigo-500/[0.04] via-transparent to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-rose-500/[0.03] blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-white/[0.02] via-transparent to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-white/[0.02] blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
         <motion.div
@@ -43,10 +43,7 @@ export default function Contact() {
             className="font-syne text-4xl md:text-6xl font-bold mb-5 tracking-tight"
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
-              Let&apos;s Build{" "}
-            </span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300">
-              Something
+              Let&apos;s Build Something
             </span>
           </motion.h2>
 
@@ -68,7 +65,7 @@ export default function Contact() {
                 "transition-all duration-300"
               )}
             >
-              <Mail className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+              <Mail className="w-4 h-4 text-white/50 flex-shrink-0" />
               <span className="text-sm text-white/80">hello@varunsharma.dev</span>
               <ArrowRight className="w-4 h-4 ml-auto text-white/25 group-hover:translate-x-1 group-hover:text-white/50 transition-all duration-200" />
             </a>
@@ -80,7 +77,7 @@ export default function Contact() {
                 "text-white/55 text-sm"
               )}
             >
-              <MapPin className="w-4 h-4 text-rose-400/50 flex-shrink-0" />
+              <MapPin className="w-4 h-4 text-white/40 flex-shrink-0" />
               Bay Area, CA
             </div>
           </motion.div>
