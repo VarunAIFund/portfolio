@@ -1,52 +1,83 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { GithubIcon, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const projects = [
   {
-    title: "Healthcare Patient Scheduling Chatbot",
+    title: "LaTeX Resume Editor",
     description:
-      "AI-powered chatbot that matches patients with therapists based on their needs and specialty. Integrated Google Calendar API for fully automated appointment scheduling.",
-    tech: ["React", "Supabase", "OpenAI API", "Google Calendar API"],
-    period: "May 2025",
-    gradientClass: "from-indigo-500/[0.12]",
-    accentClass: "text-indigo-400",
+      "Full-stack AI-powered LaTeX editor with live PDF preview, GPT-4o chat assistant that edits your resume conversationally, diff view before applying changes, and cover letter generation.",
+    tech: ["TypeScript", "React", "FastAPI", "OpenAI API", "Monaco Editor"],
+    period: "Mar 2026",
     features: [
-      "OpenAI function calling drives the chatbot's decision logic",
-      "Admin dashboard for real-time session and appointment management",
-      "Automated calendar scheduling on match confirmation",
+      "GPT-4o chat edits resume in-place with a diff preview before committing",
+      "Live PDF compilation via pdflatex with real-time preview",
+      "Cover letter generation with job posting screenshot context",
     ],
+    github: "https://github.com/VarunAIFund/latex-editor",
+    live: null,
     wide: true,
+  },
+  {
+    title: "Inbox Triage Assistant",
+    description:
+      "Smart Gmail manager that clusters emails by pattern — newsletters, shopping, same-sender, similar-topic — and enables one-click bulk archiving.",
+    tech: ["React", "Node.js", "Gmail API", "OAuth2"],
+    period: "Mar 2026",
+    features: [
+      "Processes up to 200 emails and groups them into semantic clusters",
+      "One-click bulk archive entire categories",
+      "OAuth2 Google authentication with no data stored server-side",
+    ],
+    github: "https://github.com/VarunAIFund/inbox-triage-assistant",
+    live: null,
+    wide: false,
   },
   {
     title: "MediMinder",
     description:
-      "Full-stack AI-powered medication management app designed specifically for elderly users with complex multi-medication schedules.",
-    tech: ["React", "Full-Stack", "AI-Powered"],
+      "AI medication management app for elderly users with voice-enabled AI nurse assistant, medication scanner, smart reminders, and adherence quizzes.",
+    tech: ["Next.js", "Firebase", "Web Speech API", "Node.js"],
     period: "2025",
-    gradientClass: "from-rose-500/[0.12]",
-    accentClass: "text-rose-400",
     features: [
-      "Medication tracking and smart reminders",
-      "Designed for elderly users with simple UX",
-      "Complex schedule management and conflict detection",
+      "AI nurse assistant analyzes medication journals and responds with voice",
+      "Medication scanner via photo capture",
+      "Quiz system to improve adherence",
     ],
+    github: "https://github.com/VarunAIFund/MedHelper",
+    live: "https://medi-minder-theta.vercel.app",
     wide: false,
   },
   {
-    title: "Automatic Playlist Continuation",
+    title: "Healthcare Scheduling Chatbot",
     description:
-      "Spotify Million Playlist Challenge — recommends 500 songs to continue a playlist using Word2Vec, autoencoder embeddings, CNN sequence modeling, and FAISS retrieval.",
-    tech: ["Python", "Word2Vec", "CNN", "FAISS", "TensorFlow", "PyTorch"],
-    period: "Dec 2024",
-    gradientClass: "from-violet-500/[0.12]",
-    accentClass: "text-violet-400",
+      "AI chatbot that matches patients to therapists based on specialty and insurance needs, with fully automated Google Calendar appointment booking.",
+    tech: ["React", "Supabase", "OpenAI API", "Google Calendar API"],
+    period: "May 2025",
     features: [
-      "Autoencoder + CNN learns song representations from co-occurrence structure",
-      "FAISS nearest-neighbor retrieval over full corpus of songs",
-      "Word2Vec title-based playlist similarity as a separate model",
+      "Natural language intake extracts specialty and insurance requirements",
+      "AI matches patient to therapist from database and books calendar slot",
+      "Admin dashboard for managing inquiries and appointments",
     ],
+    github: "https://github.com/VarunAIFund/healthcare-chatbot",
+    live: null,
+    wide: false,
+  },
+  {
+    title: "Movie Tracker",
+    description:
+      "Social media tracking app for movies and TV shows with watchlists, friend activity feed, and Firebase real-time backend.",
+    tech: ["React", "Firebase", "Ant Design", "React Router"],
+    period: "2025",
+    features: [
+      "Watchlist states: Watching, Planned, Completed",
+      "Friend activity feed showing recent additions",
+      "Firebase Auth + Firestore with real-time updates",
+    ],
+    github: "https://github.com/VarunAIFund/movieTracker",
+    live: "https://inner-tokenizer-350401.web.app",
     wide: false,
   },
 ];
@@ -87,14 +118,13 @@ export default function Projects() {
             variants={itemVariants}
             className="font-syne text-4xl md:text-6xl font-bold mb-16 tracking-tight"
           >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-300 via-white/90 to-indigo-300">
+            <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
               Selected Work
             </span>
           </motion.h2>
 
-          {/* Wide card on top */}
           <div className="grid md:grid-cols-2 gap-4">
-            {projects.map((project, i) => (
+            {projects.map((project) => (
               <motion.div
                 key={project.title}
                 variants={itemVariants}
@@ -103,25 +133,41 @@ export default function Projects() {
                   "bg-white/[0.02] border border-white/[0.06]",
                   "hover:bg-white/[0.035] hover:border-white/[0.10]",
                   "transition-all duration-300",
-                  i === 0 ? "md:col-span-2" : ""
+                  project.wide ? "md:col-span-2" : ""
                 )}
               >
-                {/* Hover gradient */}
-                <div
-                  className={cn(
-                    "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500",
-                    `bg-gradient-to-br ${project.gradientClass} via-transparent to-transparent`
-                  )}
-                />
-
                 <div className="relative z-10 h-full flex flex-col">
                   <div className="flex items-start justify-between gap-4 mb-3">
                     <h3 className="font-syne font-bold text-white text-lg leading-snug">
                       {project.title}
                     </h3>
-                    <span className="text-xs text-white/45 shrink-0 mt-1">
-                      {project.period}
-                    </span>
+                    <div className="flex items-center gap-2 shrink-0 mt-0.5">
+                      <span className="text-xs text-white/45">{project.period}</span>
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="GitHub"
+                          onClick={(e) => e.stopPropagation()}
+                          className="text-white/35 hover:text-white/70 transition-colors duration-200"
+                        >
+                          <GithubIcon className="w-3.5 h-3.5" />
+                        </a>
+                      )}
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Live demo"
+                          onClick={(e) => e.stopPropagation()}
+                          className="text-white/35 hover:text-white/70 transition-colors duration-200"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      )}
+                    </div>
                   </div>
 
                   <p className="text-white/65 text-sm leading-relaxed mb-5 flex-1">
