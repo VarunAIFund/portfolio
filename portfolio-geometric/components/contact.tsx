@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, ArrowRight, Github, Linkedin } from "lucide-react";
+import { Mail, MapPin, ArrowRight, GithubIcon, Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const containerVariants = {
@@ -102,7 +102,7 @@ export default function Contact() {
                 aria-label="GitHub"
                 className="text-white/35 hover:text-white/70 transition-colors duration-200"
               >
-                <Github className="w-4 h-4" />
+                <GithubIcon className="w-4 h-4" />
               </a>
               <a
                 href="https://www.linkedin.com/in/varun-sharma-891286229/"

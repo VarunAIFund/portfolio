@@ -145,7 +145,7 @@ function HeroGeometric({
                             AI Engineer & Full-Stack Developer
                         </p>
                         <p className="text-sm text-white/45 font-light tracking-wide">
-                            UCSD Math & CS · GPA 3.9 · Incoming Visa SWE Intern
+                            UCSD Math & CS · GPA 3.9
                         </p>
                     </motion.div>
 
