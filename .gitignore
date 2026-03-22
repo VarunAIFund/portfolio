@@ -10,7 +10,7 @@ build/
 
 # Production
 dist/
-
+.claude/
 # Environment variables
 .env
 .env.local
@@ -45,6 +45,9 @@ Thumbs.db
 test-results/
 playwright-report/
 .playwright-mcp/
+
+# Claude
+.claude/
 
 # Misc
 .cache/
