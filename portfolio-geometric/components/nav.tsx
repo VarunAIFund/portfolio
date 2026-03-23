@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { GithubIcon, Linkedin } from "lucide-react";
+import { GithubIcon, Linkedin, FileDown } from "lucide-react";
 
 const links = [
   { href: "#about", label: "About", sectionId: "about" },
@@ -97,6 +97,14 @@ export default function Nav() {
             <Icon className="w-4 h-4" />
           </a>
         ))}
+        <a
+          href="/resume.pdf"
+          download
+          aria-label="Download resume"
+          className="p-2 rounded-full text-white/50 hover:text-white transition-colors duration-200"
+        >
+          <FileDown className="w-4 h-4" />
+        </a>
       </div>
 
       {/* Mobile menu button */}
@@ -141,6 +149,14 @@ export default function Nav() {
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
+              <a
+                href="/resume.pdf"
+                download
+                aria-label="Download resume"
+                className="text-white/55 hover:text-white transition-colors duration-200"
+              >
+                <FileDown className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </motion.div>
