@@ -141,7 +141,20 @@ export default function Projects() {
               >
                 {/* Thumbnail */}
                 {project.image && (
-                  <div className="relative overflow-hidden h-44">
+                  <div
+                    className={cn(
+                      "relative overflow-hidden h-44",
+                      project.gallery && "cursor-pointer"
+                    )}
+                    onClick={() =>
+                      project.gallery &&
+                      setGallery({
+                        images: project.gallery,
+                        title: project.title,
+                        index: 0,
+                      })
+                    }
+                  >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={project.image}
@@ -152,25 +165,17 @@ export default function Projects() {
 
                     {/* Gallery badge */}
                     {project.gallery && (
-                      <button
-                        onClick={() =>
-                          setGallery({
-                            images: project.gallery!,
-                            title: project.title,
-                            index: 0,
-                          })
-                        }
+                      <div
                         className={cn(
                           "absolute top-2.5 right-2.5 flex items-center gap-1.5",
                           "px-2.5 py-1.5 rounded-full text-[11px] font-medium",
                           "bg-black/60 backdrop-blur-sm border border-white/[0.12]",
-                          "text-white/80 hover:text-white hover:bg-black/75",
-                          "transition-all duration-200",
+                          "text-white/80",
                         )}
                       >
                         <Images className="w-3 h-3" />
                         {project.gallery.length} images
-                      </button>
+                      </div>
                     )}
                   </div>
                 )}
