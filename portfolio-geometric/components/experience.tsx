@@ -73,22 +73,6 @@ const experiences = [
       "Trained models on NVIDIA Jetson Nano and built AR game components in Python for Raspberry Pi-based robots.",
     ],
   },
-  {
-    company: "ULAB Systems",
-    role: "R&D Summer Intern",
-    period: "Jun 2021 – Aug 2022",
-    location: "San Mateo, CA",
-    status: "past",
-    statusLabel: "",
-    statusClass: "",
-    gradientClass: "from-white/[0.04]",
-    accentClass: "text-white/65",
-    dotClass: "bg-white/40",
-    bullets: [
-      "Developed Python scripts to analyze material stress-force properties in collaboration with engineers and scientists at a dental aligner company.",
-      "Automated sensor data summarization, downsampling 7 days of per-second readings to ~3,000 points, replacing a slow manual Excel process.",
-    ],
-  },
 ];
 
 export default function Experience() {
