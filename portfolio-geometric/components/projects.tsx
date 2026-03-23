@@ -4,58 +4,6 @@ import { ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FadeIn } from "@/components/ui/fade-in";
 
-type PlaceholderConfig = {
-  bg: string;
-  rows: string[];
-};
-
-const placeholders: Record<string, PlaceholderConfig> = {
-  "Inbox Triage Assistant": {
-    bg: "linear-gradient(135deg, rgba(20,184,166,0.28) 0%, rgba(16,185,129,0.12) 55%, rgba(3,3,3,0.9) 100%)",
-    rows: ["72%", "55%", "82%"],
-  },
-  MediMinder: {
-    bg: "linear-gradient(135deg, rgba(99,102,241,0.28) 0%, rgba(139,92,246,0.12) 55%, rgba(3,3,3,0.9) 100%)",
-    rows: ["60%", "78%", "48%"],
-  },
-  "Healthcare Scheduling Chatbot": {
-    bg: "linear-gradient(135deg, rgba(244,63,94,0.28) 0%, rgba(249,115,22,0.12) 55%, rgba(3,3,3,0.9) 100%)",
-    rows: ["70%", "58%", "84%"],
-  },
-  "Movie Tracker": {
-    bg: "linear-gradient(135deg, rgba(139,92,246,0.28) 0%, rgba(217,70,239,0.12) 55%, rgba(3,3,3,0.9) 100%)",
-    rows: ["65%", "80%", "52%"],
-  },
-};
-
-function PlaceholderThumb({ config }: { config: PlaceholderConfig }) {
-  return (
-    <div className="relative w-full h-full" style={{ background: config.bg }}>
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-        }}
-      />
-      <div className="absolute inset-0 p-5 flex flex-col gap-3">
-        <div className="h-2 w-28 rounded-full bg-white/20" />
-        <div className="h-1.5 w-44 rounded-full bg-white/10" />
-        <div className="flex flex-col gap-2.5 pt-1">
-          {config.rows.map((w, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-white/25 flex-shrink-0" />
-              <div className="h-1.5 rounded-full bg-white/12" style={{ width: w }} />
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#030303]/80 to-transparent" />
-    </div>
-  );
-}
-
 const projects = [
   {
     title: "LaTeX Resume Editor",
@@ -74,22 +22,6 @@ const projects = [
     image: "/projects/latex-editor.png",
   },
   {
-    title: "Inbox Triage Assistant",
-    description:
-      "Smart Gmail manager that clusters emails by pattern (newsletters, shopping, same-sender, similar-topic) and enables one-click bulk archiving.",
-    tech: ["React", "Node.js", "Gmail API", "OAuth2"],
-    period: "Mar 2026",
-    features: [
-      "Processes up to 200 emails and groups them into semantic clusters",
-      "One-click bulk archive entire categories",
-      "OAuth2 Google authentication with no data stored server-side",
-    ],
-    github: "https://github.com/VarunAIFund/inbox-triage-assistant",
-    live: null,
-    wide: false,
-    image: null,
-  },
-  {
     title: "MediMinder",
     description:
       "AI medication management app for elderly users with voice-enabled AI nurse assistant, medication scanner, smart reminders, and adherence quizzes.",
@@ -103,7 +35,7 @@ const projects = [
     github: "https://github.com/VarunAIFund/MedHelper",
     live: "https://medi-minder-theta.vercel.app",
     wide: false,
-    image: null,
+    image: "/projects/mediminder.png",
   },
   {
     title: "Healthcare Scheduling Chatbot",
@@ -174,25 +106,23 @@ export default function Projects() {
                   "transition-all duration-300"
                 )}
               >
-                {/* Thumbnail */}
-                <div
-                  className={cn(
-                    "relative overflow-hidden",
-                    project.wide ? "h-52 md:h-64" : "h-40"
-                  )}
-                >
-                  {project.image ? (
-                    // eslint-disable-next-line @next/next/no-img-element
+                {/* Thumbnail — only rendered when there's a real image */}
+                {project.image && (
+                  <div
+                    className={cn(
+                      "relative overflow-hidden",
+                      project.wide ? "h-52 md:h-64" : "h-40"
+                    )}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={project.image}
                       alt={`${project.title} preview`}
                       className="w-full h-full object-cover object-top"
                     />
-                  ) : (
-                    <PlaceholderThumb config={placeholders[project.title]} />
-                  )}
-                  <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-[#030303]/60 to-transparent pointer-events-none" />
-                </div>
+                    <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-[#030303]/60 to-transparent pointer-events-none" />
+                  </div>
+                )}
 
                 {/* Card content */}
                 <div className="relative z-10 flex flex-col p-6 md:p-7">

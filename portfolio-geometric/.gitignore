@@ -1,1 +1,9 @@
 .vercel
+
+# Ignore loose screenshots/images at repo root
+*.png
+*.jpg
+*.jpeg
+
+# Keep real project assets
+!public/**
