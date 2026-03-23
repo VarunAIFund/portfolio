@@ -85,14 +85,6 @@ export default function Nav() {
 
       {/* Desktop right side */}
       <div className="hidden md:flex items-center justify-end gap-3 w-36">
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs text-white/55 hover:text-white/85 transition-colors duration-200 tracking-wide"
-        >
-          Resume ↗
-        </a>
         {socialLinks.map(({ href, label, icon: Icon }) => (
           <a
             key={href}
@@ -136,14 +128,6 @@ export default function Nav() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-white/65 hover:text-white transition-colors duration-200 py-1"
-            >
-              Resume ↗
-            </a>
             <div className="flex items-center gap-4 pt-1">
               {socialLinks.map(({ href, label, icon: Icon }) => (
                 <a
