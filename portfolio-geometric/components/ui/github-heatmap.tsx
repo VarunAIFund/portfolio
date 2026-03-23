@@ -73,9 +73,9 @@ export async function GitHubHeatmap() {
             </span>
           </div>
 
-          {/* month labels + grid */}
-          <div className="overflow-x-auto">
-            <div style={{ minWidth: trimmed.length * 14 }}>
+          {/* month labels + grid — rtl so most-recent weeks are visible first on mobile */}
+          <div className="overflow-x-auto" style={{ direction: "rtl" }}>
+            <div style={{ minWidth: trimmed.length * 14, direction: "ltr" }}>
               {/* month labels */}
               <div className="relative h-5 mb-1" style={{ width: trimmed.length * 14 }}>
                 {monthLabels.map(({ label, col }) => (
