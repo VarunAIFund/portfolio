@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { CursorSpotlight } from "@/components/ui/cursor-spotlight";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${dmSans.variable} font-dm bg-[#030303] text-white antialiased`}
       >
+        <ScrollProgress />
         <CursorSpotlight />
         <a
           href="#main-content"
