@@ -8,11 +8,15 @@ import Experience from "@/components/experience";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
 import Contact from "@/components/contact";
+import { AmbientGlow } from "@/components/ui/ambient-glow";
+import { FloatingCTA } from "@/components/ui/floating-cta";
 
 export default function Home() {
   return (
     <main className="min-h-screen overflow-x-clip">
       <GeometricBackground />
+      <AmbientGlow />
+      <FloatingCTA />
       <Nav />
       <section id="hero">
         <HeroGeometric title1="Varun Sharma" />

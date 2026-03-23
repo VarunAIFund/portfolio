@@ -142,17 +142,10 @@ export default function Projects() {
                 {/* Thumbnail */}
                 {project.image && (
                   <div
-                    className={cn(
-                      "relative overflow-hidden h-44",
-                      project.gallery && "cursor-pointer"
-                    )}
+                    className={cn("relative overflow-hidden h-44", project.gallery && "cursor-pointer")}
                     onClick={() =>
                       project.gallery &&
-                      setGallery({
-                        images: project.gallery,
-                        title: project.title,
-                        index: 0,
-                      })
+                      setGallery({ images: project.gallery, title: project.title, index: 0 })
                     }
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -162,8 +155,6 @@ export default function Projects() {
                       className="w-full h-full object-cover object-top"
                     />
                     <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-[#030303]/60 to-transparent pointer-events-none" />
-
-                    {/* Gallery badge */}
                     {project.gallery && (
                       <div
                         className={cn(
