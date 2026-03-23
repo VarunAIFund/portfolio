@@ -3,6 +3,30 @@
 import { Mail, MapPin, ArrowRight, GithubIcon, Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FadeIn } from "@/components/ui/fade-in";
+import { useEffect, useState } from "react";
+
+function LocalTime() {
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    const update = () => {
+      setTime(
+        new Date().toLocaleTimeString("en-US", {
+          timeZone: "America/Los_Angeles",
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: true,
+        })
+      );
+    };
+    update();
+    const id = setInterval(update, 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  if (!time) return null;
+  return <span className="text-white/30 text-xs">{time} PT</span>;
+}
 
 export default function Contact() {
   return (
@@ -57,6 +81,8 @@ export default function Contact() {
             >
               <MapPin className="w-4 h-4 text-white/45 flex-shrink-0" />
               Bay Area, CA
+              <span className="text-white/20">·</span>
+              <LocalTime />
             </div>
           </div>
         </FadeIn>
