@@ -34,7 +34,7 @@ const experiences = [
     accentClass: "text-white/65",
     dotClass: "bg-white/40",
     bullets: [
-      "Built UltraLink — a RAG candidate search system over 200K profiles with LLM-based two-stage matching and reranking",
+      "Built UltraLink, a RAG candidate search system over 200K profiles with LLM-based two-stage matching and reranking",
       "Implemented fit rationale generation for strong matches; optimized costs using GPT-4o-mini with selective heavy-model reranking",
       "Designed and built Buildathon.ai with React, Tailwind, Supabase edge functions; created HR dashboard for recruiting team",
     ],

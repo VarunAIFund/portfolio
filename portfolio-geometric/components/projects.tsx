@@ -76,7 +76,7 @@ const projects = [
   {
     title: "Inbox Triage Assistant",
     description:
-      "Smart Gmail manager that clusters emails by pattern — newsletters, shopping, same-sender, similar-topic — and enables one-click bulk archiving.",
+      "Smart Gmail manager that clusters emails by pattern (newsletters, shopping, same-sender, similar-topic) and enables one-click bulk archiving.",
     tech: ["React", "Node.js", "Gmail API", "OAuth2"],
     period: "Mar 2026",
     features: [

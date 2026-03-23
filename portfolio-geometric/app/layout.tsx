@@ -15,7 +15,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Varun Sharma — AI Engineer & Developer",
+  title: "Varun Sharma | AI Engineer & Developer",
   description:
     "UCSD Math & CS student, AI/ML engineer, and full-stack developer building intelligent systems.",
 };

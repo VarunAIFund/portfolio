@@ -56,11 +56,9 @@ export default function About() {
               in Cognitive Science.
             </p>
             <p className="text-white/75 text-lg leading-relaxed font-light">
-              I currently work{" "}
-              <span className="text-white/90">20 hours/week</span> across two
-              AI-focused internships simultaneously while maintaining a 3.9
-              GPA. I specialize in end-to-end ownership — from data collection
-              and modeling to product UI and deployment.
+              I currently work in AI-focused engineering roles while maintaining
+              a 3.9 GPA. I specialize in end-to-end ownership, from data
+              collection and modeling to product UI and deployment.
             </p>
             <p className="text-white/65 text-base leading-relaxed font-light">
               Deep interest in applying AI to practical, human-facing
