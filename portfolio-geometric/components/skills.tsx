@@ -1,12 +1,11 @@
-"use client";
-
 import { FadeIn } from "@/components/ui/fade-in";
+import { GitHubHeatmap } from "@/components/ui/github-heatmap";
 
 const skillGroups = [
   {
     category: "Languages",
     gradientClass: "from-white/[0.04]",
-    skills: ["Python", "TypeScript", "JavaScript", "SQL", "C++", "Bash"],
+    skills: ["Python", "TypeScript", "JavaScript", "SQL", "C++", "Bash", "HTML/CSS", "MATLAB", "R"],
   },
   {
     category: "AI / ML",
@@ -99,6 +98,7 @@ export default function Skills() {
             </FadeIn>
           ))}
         </div>
+        <GitHubHeatmap />
       </div>
     </section>
   );
