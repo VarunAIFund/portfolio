@@ -32,7 +32,7 @@ const projects: Project[] = [
     ],
     github: "https://github.com/VarunAIFund/latex-editor",
     live: null,
-    image: "/projects/latex-editor.png",
+    image: "/projects/latex/ats-result.png",
     gallery: [
       "/projects/latex/ats-result.png",
       "/projects/latex/optimizing.png",
@@ -73,7 +73,7 @@ const projects: Project[] = [
     ],
     github: "https://github.com/VarunAIFund/healthcare-chatbot",
     live: null,
-    image: "/projects/healthcare/chat.png",
+    image: "/projects/healthcare/admin-inquiries.png",
     gallery: [
       "/projects/healthcare/chat.png",
       "/projects/healthcare/admin-inquiries.png",
