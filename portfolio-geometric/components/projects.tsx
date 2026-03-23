@@ -1,10 +1,24 @@
 "use client";
 
-import { ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { ExternalLink, Images } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FadeIn } from "@/components/ui/fade-in";
+import { ProjectGallery } from "@/components/ui/project-gallery";
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  period: string;
+  features: string[];
+  github: string | null;
+  live: string | null;
+  image: string | null;
+  gallery?: string[];
+};
+
+const projects: Project[] = [
   {
     title: "LaTeX Resume Editor",
     description:
@@ -18,7 +32,6 @@ const projects = [
     ],
     github: "https://github.com/VarunAIFund/latex-editor",
     live: null,
-    wide: true,
     image: "/projects/latex-editor.png",
   },
   {
@@ -34,8 +47,13 @@ const projects = [
     ],
     github: "https://github.com/VarunAIFund/MedHelper",
     live: "https://medi-minder-theta.vercel.app",
-    wide: false,
-    image: "/projects/mediminder.png",
+    image: "/projects/mediminder/dashboard.jpg",
+    gallery: [
+      "/projects/mediminder/landing.jpg",
+      "/projects/mediminder/dashboard.jpg",
+      "/projects/mediminder/scanner.jpg",
+      "/projects/mediminder/report.jpg",
+    ],
   },
   {
     title: "Healthcare Scheduling Chatbot",
@@ -50,8 +68,13 @@ const projects = [
     ],
     github: "https://github.com/VarunAIFund/healthcare-chatbot",
     live: null,
-    wide: false,
-    image: null,
+    image: "/projects/healthcare/chat.png",
+    gallery: [
+      "/projects/healthcare/chat.png",
+      "/projects/healthcare/admin-inquiries.png",
+      "/projects/healthcare/admin-appointments.png",
+      "/projects/healthcare/admin-therapists.png",
+    ],
   },
   {
     title: "Movie Tracker",
@@ -66,12 +89,17 @@ const projects = [
     ],
     github: "https://github.com/VarunAIFund/movieTracker",
     live: "https://inner-tokenizer-350401.web.app",
-    wide: false,
     image: null,
   },
 ];
 
 export default function Projects() {
+  const [gallery, setGallery] = useState<{
+    images: string[];
+    title: string;
+    index: number;
+  } | null>(null);
+
   return (
     <section id="projects" aria-label="Projects" className="relative py-16 md:py-24 px-4">
       <div className="absolute bottom-0 left-1/4 w-[600px] h-[300px] bg-violet-500/[0.04] blur-[120px] rounded-full pointer-events-none" />
@@ -93,11 +121,7 @@ export default function Projects() {
 
         <div className="grid md:grid-cols-2 gap-4">
           {projects.map((project, i) => (
-            <FadeIn
-              key={project.title}
-              delay={0.15 + i * 0.08}
-              className={project.wide ? "md:col-span-2" : ""}
-            >
+            <FadeIn key={project.title} delay={0.15 + i * 0.08}>
               <div
                 className={cn(
                   "group relative rounded-2xl overflow-hidden h-full",
@@ -106,14 +130,9 @@ export default function Projects() {
                   "transition-all duration-300"
                 )}
               >
-                {/* Thumbnail — only rendered when there's a real image */}
+                {/* Thumbnail */}
                 {project.image && (
-                  <div
-                    className={cn(
-                      "relative overflow-hidden",
-                      project.wide ? "h-52 md:h-64" : "h-40"
-                    )}
-                  >
+                  <div className="relative overflow-hidden h-44">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={project.image}
@@ -121,6 +140,29 @@ export default function Projects() {
                       className="w-full h-full object-cover object-top"
                     />
                     <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-[#030303]/60 to-transparent pointer-events-none" />
+
+                    {/* Gallery badge */}
+                    {project.gallery && (
+                      <button
+                        onClick={() =>
+                          setGallery({
+                            images: project.gallery!,
+                            title: project.title,
+                            index: 0,
+                          })
+                        }
+                        className={cn(
+                          "absolute top-2.5 right-2.5 flex items-center gap-1.5",
+                          "px-2.5 py-1.5 rounded-full text-[11px] font-medium",
+                          "bg-black/60 backdrop-blur-sm border border-white/[0.12]",
+                          "text-white/80 hover:text-white hover:bg-black/75",
+                          "transition-all duration-200"
+                        )}
+                      >
+                        <Images className="w-3 h-3" />
+                        {project.gallery.length} images
+                      </button>
+                    )}
                   </div>
                 )}
 
@@ -193,6 +235,17 @@ export default function Projects() {
           ))}
         </div>
       </div>
+
+      {/* Lightbox */}
+      {gallery && (
+        <ProjectGallery
+          images={gallery.images}
+          title={gallery.title}
+          activeIndex={gallery.index}
+          onClose={() => setGallery(null)}
+          onNavigate={(index) => setGallery({ ...gallery, index })}
+        />
+      )}
     </section>
   );
 }
