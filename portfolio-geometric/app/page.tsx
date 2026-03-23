@@ -11,7 +11,7 @@ import Contact from "@/components/contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-clip">
       <GeometricBackground />
       <Nav />
       <section id="hero">
