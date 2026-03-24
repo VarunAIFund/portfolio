@@ -160,8 +160,8 @@ export default function Projects() {
                         className={cn(
                           "absolute top-2.5 right-2.5 flex items-center gap-1.5",
                           "px-2.5 py-1.5 rounded-full text-[11px] font-medium",
-                          "bg-black/60 backdrop-blur-sm border border-white/[0.12]",
-                          "text-white/80",
+                          "bg-white/[0.10] backdrop-blur-md border border-white/[0.18]",
+                          "text-white/90",
                         )}
                       >
                         <Images className="w-3 h-3" />
