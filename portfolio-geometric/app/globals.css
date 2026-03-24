@@ -69,39 +69,40 @@ html:not(.dark) [class*="from-indigo-300"][class*="bg-clip-text"] {
 }
 
 /* ── Light mode: card & glass backgrounds ────────────── */
-html:not(.dark) .bg-white\/\[0\.02\]  { background-color: rgba(13,12,10,0.025) !important; }
-html:not(.dark) .bg-white\/\[0\.03\]  { background-color: rgba(13,12,10,0.035) !important; }
-html:not(.dark) .bg-white\/\[0\.04\]  { background-color: rgba(13,12,10,0.04)  !important; }
-html:not(.dark) .bg-white\/\[0\.05\]  { background-color: rgba(13,12,10,0.05)  !important; }
-html:not(.dark) .bg-white\/\[0\.06\]  { background-color: rgba(13,12,10,0.06)  !important; }
-html:not(.dark) .bg-white\/\[0\.07\]  { background-color: rgba(13,12,10,0.07)  !important; }
-html:not(.dark) .bg-white\/\[0\.08\]  { background-color: rgba(13,12,10,0.08)  !important; }
-html:not(.dark) .bg-white\/\[0\.09\]  { background-color: rgba(13,12,10,0.09)  !important; }
-html:not(.dark) .bg-white\/\[0\.10\]  { background-color: rgba(13,12,10,0.10)  !important; }
-html:not(.dark) .bg-white\/\[0\.13\]  { background-color: rgba(13,12,10,0.13)  !important; }
-html:not(.dark) .bg-white\/\[0\.15\]  { background-color: rgba(13,12,10,0.15)  !important; }
+/* Boosted opacity so cards are visually distinct on the light background  */
+html:not(.dark) .bg-white\/\[0\.02\]  { background-color: rgba(13,12,10,0.055) !important; }
+html:not(.dark) .bg-white\/\[0\.03\]  { background-color: rgba(13,12,10,0.065) !important; }
+html:not(.dark) .bg-white\/\[0\.04\]  { background-color: rgba(13,12,10,0.075) !important; }
+html:not(.dark) .bg-white\/\[0\.05\]  { background-color: rgba(13,12,10,0.085) !important; }
+html:not(.dark) .bg-white\/\[0\.06\]  { background-color: rgba(13,12,10,0.09)  !important; }
+html:not(.dark) .bg-white\/\[0\.07\]  { background-color: rgba(13,12,10,0.10)  !important; }
+html:not(.dark) .bg-white\/\[0\.08\]  { background-color: rgba(13,12,10,0.11)  !important; }
+html:not(.dark) .bg-white\/\[0\.09\]  { background-color: rgba(13,12,10,0.12)  !important; }
+html:not(.dark) .bg-white\/\[0\.10\]  { background-color: rgba(13,12,10,0.13)  !important; }
+html:not(.dark) .bg-white\/\[0\.13\]  { background-color: rgba(13,12,10,0.16)  !important; }
+html:not(.dark) .bg-white\/\[0\.15\]  { background-color: rgba(13,12,10,0.18)  !important; }
 
 /* Hover variants */
-html:not(.dark) .hover\:bg-white\/\[0\.06\]:hover  { background-color: rgba(13,12,10,0.06)  !important; }
-html:not(.dark) .hover\:bg-white\/\[0\.07\]:hover  { background-color: rgba(13,12,10,0.07)  !important; }
-html:not(.dark) .hover\:bg-white\/\[0\.09\]:hover  { background-color: rgba(13,12,10,0.09)  !important; }
-html:not(.dark) .hover\:bg-white\/\[0\.13\]:hover  { background-color: rgba(13,12,10,0.13)  !important; }
+html:not(.dark) .hover\:bg-white\/\[0\.06\]:hover  { background-color: rgba(13,12,10,0.12)  !important; }
+html:not(.dark) .hover\:bg-white\/\[0\.07\]:hover  { background-color: rgba(13,12,10,0.13)  !important; }
+html:not(.dark) .hover\:bg-white\/\[0\.09\]:hover  { background-color: rgba(13,12,10,0.15)  !important; }
+html:not(.dark) .hover\:bg-white\/\[0\.13\]:hover  { background-color: rgba(13,12,10,0.18)  !important; }
 
 /* ── Light mode: border-white/* overrides ────────────── */
-html:not(.dark) .border-white\/\[0\.06\]  { border-color: rgba(13,12,10,0.08)  !important; }
-html:not(.dark) .border-white\/\[0\.07\]  { border-color: rgba(13,12,10,0.09)  !important; }
-html:not(.dark) .border-white\/\[0\.08\]  { border-color: rgba(13,12,10,0.10)  !important; }
-html:not(.dark) .border-white\/\[0\.09\]  { border-color: rgba(13,12,10,0.11)  !important; }
-html:not(.dark) .border-white\/\[0\.10\]  { border-color: rgba(13,12,10,0.12)  !important; }
-html:not(.dark) .border-white\/\[0\.14\]  { border-color: rgba(13,12,10,0.16)  !important; }
-html:not(.dark) .border-white\/\[0\.15\]  { border-color: rgba(13,12,10,0.18)  !important; }
-html:not(.dark) .border-white\/\[0\.18\]  { border-color: rgba(13,12,10,0.20)  !important; }
-html:not(.dark) .border-white\/\[0\.25\]  { border-color: rgba(13,12,10,0.28)  !important; }
-html:not(.dark) .border-white\/\[0\.32\]  { border-color: rgba(13,12,10,0.22)  !important; }
+html:not(.dark) .border-white\/\[0\.06\]  { border-color: rgba(13,12,10,0.14)  !important; }
+html:not(.dark) .border-white\/\[0\.07\]  { border-color: rgba(13,12,10,0.15)  !important; }
+html:not(.dark) .border-white\/\[0\.08\]  { border-color: rgba(13,12,10,0.16)  !important; }
+html:not(.dark) .border-white\/\[0\.09\]  { border-color: rgba(13,12,10,0.17)  !important; }
+html:not(.dark) .border-white\/\[0\.10\]  { border-color: rgba(13,12,10,0.18)  !important; }
+html:not(.dark) .border-white\/\[0\.14\]  { border-color: rgba(13,12,10,0.22)  !important; }
+html:not(.dark) .border-white\/\[0\.15\]  { border-color: rgba(13,12,10,0.24)  !important; }
+html:not(.dark) .border-white\/\[0\.18\]  { border-color: rgba(13,12,10,0.26)  !important; }
+html:not(.dark) .border-white\/\[0\.25\]  { border-color: rgba(13,12,10,0.32)  !important; }
+html:not(.dark) .border-white\/\[0\.32\]  { border-color: rgba(13,12,10,0.28)  !important; }
 
-html:not(.dark) .hover\:border-white\/\[0\.14\]:hover { border-color: rgba(13,12,10,0.16) !important; }
-html:not(.dark) .hover\:border-white\/\[0\.18\]:hover { border-color: rgba(13,12,10,0.20) !important; }
-html:not(.dark) .hover\:border-white\/\[0\.25\]:hover { border-color: rgba(13,12,10,0.28) !important; }
+html:not(.dark) .hover\:border-white\/\[0\.14\]:hover { border-color: rgba(13,12,10,0.26) !important; }
+html:not(.dark) .hover\:border-white\/\[0\.18\]:hover { border-color: rgba(13,12,10,0.30) !important; }
+html:not(.dark) .hover\:border-white\/\[0\.25\]:hover { border-color: rgba(13,12,10,0.36) !important; }
 
 /* ── Light mode: hard-coded dark backgrounds ─────────── */
 html:not(.dark) .bg-\[\#030303\]                    { background-color: #f0ede6 !important; }
