@@ -2,9 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Dark mode (default) ──────────────────────────────── */
 :root {
   --background: #030303;
   --foreground: #ffffff;
+  --nav-bg: rgba(3, 3, 3, 0.80);
+  --scrollbar-track: #030303;
+  --scrollbar-thumb: rgba(255, 255, 255, 0.08);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Light mode ──────────────────────────────────────── */
+html:not(.dark) {
+  --background: #f0ede6;
+  --foreground: #0d0c0a;
+  --nav-bg: rgba(240, 237, 230, 0.85);
+  --scrollbar-track: #f0ede6;
+  --scrollbar-thumb: rgba(13, 12, 10, 0.12);
+  --scrollbar-thumb-hover: rgba(13, 12, 10, 0.22);
 }
 
 html {
@@ -14,28 +29,119 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Custom scrollbar */
+/* ── Light mode: text-white/* overrides ─────────────── */
+html:not(.dark) .text-white           { color: #0d0c0a !important; }
+html:not(.dark) .text-white\/90       { color: rgba(13,12,10,0.90) !important; }
+html:not(.dark) .text-white\/80       { color: rgba(13,12,10,0.80) !important; }
+html:not(.dark) .text-white\/75       { color: rgba(13,12,10,0.75) !important; }
+html:not(.dark) .text-white\/70       { color: rgba(13,12,10,0.70) !important; }
+html:not(.dark) .text-white\/65       { color: rgba(13,12,10,0.65) !important; }
+html:not(.dark) .text-white\/60       { color: rgba(13,12,10,0.60) !important; }
+html:not(.dark) .text-white\/55       { color: rgba(13,12,10,0.55) !important; }
+html:not(.dark) .text-white\/50       { color: rgba(13,12,10,0.50) !important; }
+html:not(.dark) .text-white\/45       { color: rgba(13,12,10,0.45) !important; }
+html:not(.dark) .text-white\/40       { color: rgba(13,12,10,0.40) !important; }
+
+/* ── Light mode: gradient text headings ─────────────── */
+/* bg-clip-text uses white gradients which become invisible on light bg.
+   Use background-image (not background shorthand) so background-clip: text
+   set by Tailwind's bg-clip-text class is preserved. */
+html:not(.dark) .bg-clip-text {
+  background-image: linear-gradient(to bottom, #0d0c0a 0%, rgba(13,12,10,0.68) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+/* Specific indigo/rose gradient in hero title2 — keep chromatic but darken */
+html:not(.dark) .bg-clip-text.from-indigo-300,
+html:not(.dark) .bg-clip-text.via-white\/90,
+html:not(.dark) [class*="from-indigo-300"][class*="bg-clip-text"] {
+  background-image: linear-gradient(to right, #4338ca, #6b21a8, #9f1239) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+/* ── Light mode: card & glass backgrounds ────────────── */
+html:not(.dark) .bg-white\/\[0\.03\]  { background-color: rgba(13,12,10,0.035) !important; }
+html:not(.dark) .bg-white\/\[0\.04\]  { background-color: rgba(13,12,10,0.04)  !important; }
+html:not(.dark) .bg-white\/\[0\.05\]  { background-color: rgba(13,12,10,0.05)  !important; }
+html:not(.dark) .bg-white\/\[0\.06\]  { background-color: rgba(13,12,10,0.06)  !important; }
+html:not(.dark) .bg-white\/\[0\.07\]  { background-color: rgba(13,12,10,0.07)  !important; }
+html:not(.dark) .bg-white\/\[0\.08\]  { background-color: rgba(13,12,10,0.08)  !important; }
+html:not(.dark) .bg-white\/\[0\.09\]  { background-color: rgba(13,12,10,0.09)  !important; }
+html:not(.dark) .bg-white\/\[0\.10\]  { background-color: rgba(13,12,10,0.10)  !important; }
+html:not(.dark) .bg-white\/\[0\.13\]  { background-color: rgba(13,12,10,0.13)  !important; }
+html:not(.dark) .bg-white\/\[0\.15\]  { background-color: rgba(13,12,10,0.15)  !important; }
+
+/* Hover variants */
+html:not(.dark) .hover\:bg-white\/\[0\.06\]:hover  { background-color: rgba(13,12,10,0.06)  !important; }
+html:not(.dark) .hover\:bg-white\/\[0\.07\]:hover  { background-color: rgba(13,12,10,0.07)  !important; }
+html:not(.dark) .hover\:bg-white\/\[0\.13\]:hover  { background-color: rgba(13,12,10,0.13)  !important; }
+
+/* ── Light mode: border-white/* overrides ────────────── */
+html:not(.dark) .border-white\/\[0\.06\]  { border-color: rgba(13,12,10,0.08)  !important; }
+html:not(.dark) .border-white\/\[0\.08\]  { border-color: rgba(13,12,10,0.10)  !important; }
+html:not(.dark) .border-white\/\[0\.09\]  { border-color: rgba(13,12,10,0.11)  !important; }
+html:not(.dark) .border-white\/\[0\.10\]  { border-color: rgba(13,12,10,0.12)  !important; }
+html:not(.dark) .border-white\/\[0\.14\]  { border-color: rgba(13,12,10,0.16)  !important; }
+html:not(.dark) .border-white\/\[0\.15\]  { border-color: rgba(13,12,10,0.18)  !important; }
+html:not(.dark) .border-white\/\[0\.18\]  { border-color: rgba(13,12,10,0.20)  !important; }
+html:not(.dark) .border-white\/\[0\.25\]  { border-color: rgba(13,12,10,0.28)  !important; }
+html:not(.dark) .border-white\/\[0\.32\]  { border-color: rgba(13,12,10,0.22)  !important; }
+
+html:not(.dark) .hover\:border-white\/\[0\.14\]:hover { border-color: rgba(13,12,10,0.16) !important; }
+html:not(.dark) .hover\:border-white\/\[0\.18\]:hover { border-color: rgba(13,12,10,0.20) !important; }
+html:not(.dark) .hover\:border-white\/\[0\.25\]:hover { border-color: rgba(13,12,10,0.28) !important; }
+
+/* ── Light mode: hard-coded dark backgrounds ─────────── */
+html:not(.dark) .bg-\[\#030303\]                    { background-color: #f0ede6 !important; }
+html:not(.dark) .bg-\[\#030303\]\/80                { background-color: rgba(240,237,230,0.80) !important; }
+html:not(.dark) .bg-\[\#030303\]\/95                { background-color: rgba(240,237,230,0.95) !important; }
+
+/* Gradient fade-to/from dark background (used in GeometricBackground) */
+html:not(.dark) .from-\[\#030303\]                  { --tw-gradient-from: #f0ede6 var(--tw-gradient-from-position) !important; }
+html:not(.dark) .to-\[\#030303\]                    { --tw-gradient-to: #f0ede6 var(--tw-gradient-to-position) !important; }
+html:not(.dark) .to-\[\#030303\]\/80                { --tw-gradient-to: rgba(240,237,230,0.80) var(--tw-gradient-to-position) !important; }
+
+/* ── Light mode: geometric shapes ────────────────────── */
+/* The elliptic shapes use white shadow + after-radial — tone them to neutral */
+html:not(.dark) .shadow-\[0_8px_32px_0_rgba\(255\,255\,255\,0\.24\)\] {
+  box-shadow: 0 8px 32px 0 rgba(13,12,10,0.10) !important;
+}
+html:not(.dark) .after\:bg-\[radial-gradient\(circle_at_50\%_50\%\,rgba\(255\,255\,255\,0\.44\)\,transparent_70\%\)\]::after {
+  background: radial-gradient(circle at 50% 50%, rgba(13,12,10,0.14), transparent 70%) !important;
+}
+
+/* Mobile menu hamburger lines */
+html:not(.dark) .bg-white\/60 { background-color: rgba(13,12,10,0.60) !important; }
+
+/* ── Custom scrollbar ─────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #030303;
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--scrollbar-thumb);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--scrollbar-thumb-hover);
 }
 
-/* Selection */
+/* ── Selection ──────────────────────────────────────── */
 ::selection {
   background: rgba(99, 102, 241, 0.3);
   color: white;
+}
+
+html:not(.dark) ::selection {
+  background: rgba(99, 102, 241, 0.25);
+  color: #0d0c0a;
 }

@@ -180,7 +180,10 @@ function GeometricBackground() {
     const overlayOpacity = useTransform(scrollY, [0, 600], [0, 0.58]);
 
     return (
-        <div className="fixed inset-0 -z-10 bg-[#030303] overflow-hidden">
+        <div
+            className="fixed inset-0 -z-10 overflow-hidden"
+            style={{ background: "var(--background)" }}
+        >
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.11] via-transparent to-rose-500/[0.11] blur-3xl" />
 
             {/* Large shapes — hidden on mobile, visible on md+ */}
@@ -227,10 +230,18 @@ function GeometricBackground() {
                 className="left-[5%] md:left-[25%] top-[3%] md:top-[10%] scale-75 md:scale-100"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 pointer-events-none" />
+            <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                    background: "linear-gradient(to top, var(--background) 0%, transparent 40%, color-mix(in srgb, var(--background) 80%, transparent) 100%)"
+                }}
+            />
             <motion.div
-                className="absolute inset-0 bg-[#030303] pointer-events-none"
-                style={{ opacity: overlayOpacity }}
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                    opacity: overlayOpacity,
+                    background: "var(--background)"
+                }}
             />
         </div>
     );

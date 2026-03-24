@@ -3,6 +3,7 @@ import { Syne, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { CursorSpotlight } from "@/components/ui/cursor-spotlight";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -28,19 +29,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${syne.variable} ${dmSans.variable} font-dm bg-[#030303] text-white antialiased`}
+        className={`${syne.variable} ${dmSans.variable} font-dm antialiased`}
       >
-        <ScrollProgress />
-        <CursorSpotlight />
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-md focus:text-sm focus:font-medium"
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange={false}
         >
-          Skip to content
-        </a>
-        <div id="main-content">{children}</div>
+          <ScrollProgress />
+          <CursorSpotlight />
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-md focus:text-sm focus:font-medium"
+          >
+            Skip to content
+          </a>
+          <div id="main-content">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
-import { GithubIcon, Linkedin, FileDown } from "lucide-react";
+import { GithubIcon, Linkedin, FileDown, Sun, Moon } from "lucide-react";
 
 const links = [
   { href: "#about", label: "About", sectionId: "about" },
@@ -21,6 +22,10 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 80);
@@ -52,9 +57,14 @@ export default function Nav() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
+      style={
+        scrolled
+          ? { background: "var(--nav-bg)" }
+          : {}
+      }
       className={`fixed top-0 left-0 right-0 z-50 flex items-center px-6 md:px-12 py-5 transition-all duration-500 ${
         scrolled
-          ? "bg-[#030303]/80 backdrop-blur-md border-b border-white/[0.06]"
+          ? "backdrop-blur-md border-b border-white/[0.06]"
           : "bg-transparent"
       }`}
     >
@@ -84,7 +94,7 @@ export default function Nav() {
       </div>
 
       {/* Desktop right side */}
-      <div className="hidden md:flex items-center justify-end gap-3 w-36">
+      <div className="hidden md:flex items-center justify-end gap-3 w-44">
         {socialLinks.map(({ href, label, icon: Icon }) => (
           <a
             key={href}
@@ -105,6 +115,29 @@ export default function Nav() {
         >
           <FileDown className="w-4 h-4" />
         </a>
+
+        {/* Theme toggle */}
+        {mounted && (
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            aria-label="Toggle light/dark mode"
+            className="relative p-2 rounded-full text-white/50 hover:text-white transition-colors duration-200"
+          >
+            <motion.div
+              key={theme}
+              initial={{ opacity: 0, rotate: -30, scale: 0.7 }}
+              animate={{ opacity: 1, rotate: 0, scale: 1 }}
+              exit={{ opacity: 0, rotate: 30, scale: 0.7 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+            >
+              {theme === "dark" ? (
+                <Sun className="w-4 h-4" />
+              ) : (
+                <Moon className="w-4 h-4" />
+              )}
+            </motion.div>
+          </button>
+        )}
       </div>
 
       {/* Mobile menu button */}
@@ -123,7 +156,8 @@ export default function Nav() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="absolute top-full left-0 right-0 bg-[#030303]/95 backdrop-blur-md border-b border-white/[0.06] md:hidden"
+          style={{ background: "var(--nav-bg)" }}
+          className="absolute top-full left-0 right-0 backdrop-blur-md border-b border-white/[0.06] md:hidden"
         >
           <div className="flex flex-col px-6 py-4 gap-4">
             {links.map((link) => (
@@ -157,6 +191,19 @@ export default function Nav() {
               >
                 <FileDown className="w-4 h-4" />
               </a>
+              {mounted && (
+                <button
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  aria-label="Toggle light/dark mode"
+                  className="text-white/55 hover:text-white transition-colors duration-200"
+                >
+                  {theme === "dark" ? (
+                    <Sun className="w-4 h-4" />
+                  ) : (
+                    <Moon className="w-4 h-4" />
+                  )}
+                </button>
+              )}
             </div>
           </div>
         </motion.div>
