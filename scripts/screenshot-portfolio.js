@@ -7,7 +7,7 @@
  *   node scripts/screenshot-portfolio.js
  *   node scripts/screenshot-portfolio.js --url http://localhost:3001
  *
- * Output: .claude/screenshots/YYYY-MM-DD/
+ * Output: .claude/screenshots/{N}/  (auto-increments each run)
  * Requires: playwright  (npm i -g playwright  or  npx playwright install chromium)
  */
 
@@ -16,10 +16,15 @@ const path = require('path');
 const fs = require('fs');
 
 const BASE_URL = process.argv.find(a => a.startsWith('--url='))?.split('=')[1] ?? 'http://localhost:3000';
-const DATE = new Date().toISOString().split('T')[0];
 const SCRIPT_DIR = path.dirname(__filename);
 const ROOT = path.resolve(SCRIPT_DIR, '..');
-const OUT_DIR = path.join(ROOT, '.claude', 'screenshots', DATE);
+const SCREENSHOTS_DIR = path.join(ROOT, '.claude', 'screenshots');
+fs.mkdirSync(SCREENSHOTS_DIR, { recursive: true });
+const existingNums = fs.readdirSync(SCREENSHOTS_DIR)
+  .map(n => parseInt(n, 10))
+  .filter(n => !isNaN(n));
+const nextNum = existingNums.length > 0 ? Math.max(...existingNums) + 1 : 1;
+const OUT_DIR = path.join(SCREENSHOTS_DIR, String(nextNum));
 
 const SECTIONS = [
   { name: '1-hero',       anchor: '#hero' },
