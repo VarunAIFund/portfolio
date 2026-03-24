@@ -84,7 +84,7 @@ export default function Nav() {
               key={link.href}
               href={link.href}
               className={`text-sm tracking-wide transition-colors duration-200 ${
-                isActive ? "text-white" : "text-white/60 hover:text-white"
+                isActive ? "text-white" : "text-white/75 hover:text-white"
               }`}
             >
               {link.label}

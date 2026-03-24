@@ -105,8 +105,8 @@ export default function Experience() {
               <div
                 className={cn(
                   "group relative rounded-2xl p-6 md:p-8 overflow-hidden",
-                  "bg-white/[0.02] border border-white/[0.06]",
-                  "hover:bg-white/[0.035] hover:border-white/[0.10]",
+                  "bg-white/[0.05] border border-white/[0.10]",
+                  "hover:bg-white/[0.08] hover:border-white/[0.16]",
                   "transition-all duration-400",
                 )}
               >

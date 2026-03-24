@@ -57,7 +57,7 @@ export default function Contact() {
         </FadeIn>
 
         <FadeIn delay={0.25}>
-          <div className="flex flex-col sm:flex-row gap-4 mb-10">
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <a
               href="mailto:hello@varunsharma.dev"
               className={cn(
@@ -84,6 +84,51 @@ export default function Contact() {
               <span className="text-white/20">·</span>
               <LocalTime />
             </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.3}>
+          <div className="flex items-center gap-3 mb-10">
+            <a
+              href="https://github.com/varunaifund"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                "group flex items-center gap-2.5 px-5 py-3 rounded-full",
+                "bg-white/[0.04] border border-white/[0.09]",
+                "hover:bg-white/[0.08] hover:border-white/[0.18]",
+                "transition-all duration-300"
+              )}
+            >
+              <GithubIcon className="w-4 h-4 text-white/55 group-hover:text-white/80 transition-colors duration-200" />
+              <span className="text-sm text-white/70 group-hover:text-white/90 transition-colors duration-200">GitHub</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/varun-sharma-891286229/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                "group flex items-center gap-2.5 px-5 py-3 rounded-full",
+                "bg-white/[0.04] border border-white/[0.09]",
+                "hover:bg-white/[0.08] hover:border-white/[0.18]",
+                "transition-all duration-300"
+              )}
+            >
+              <Linkedin className="w-4 h-4 text-white/55 group-hover:text-white/80 transition-colors duration-200" />
+              <span className="text-sm text-white/70 group-hover:text-white/90 transition-colors duration-200">LinkedIn</span>
+            </a>
+            <a
+              href="/resume.pdf"
+              download
+              className={cn(
+                "group flex items-center gap-2.5 px-5 py-3 rounded-full",
+                "bg-white/[0.04] border border-white/[0.09]",
+                "hover:bg-white/[0.08] hover:border-white/[0.18]",
+                "transition-all duration-300"
+              )}
+            >
+              <span className="text-sm text-white/70 group-hover:text-white/90 transition-colors duration-200">Resume ↓</span>
+            </a>
           </div>
         </FadeIn>
 

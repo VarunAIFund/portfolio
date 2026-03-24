@@ -70,17 +70,17 @@ html:not(.dark) [class*="from-indigo-300"][class*="bg-clip-text"] {
 
 /* ── Light mode: card & glass backgrounds ────────────── */
 /* Boosted opacity so cards are visually distinct on the light background  */
-html:not(.dark) .bg-white\/\[0\.02\]  { background-color: rgba(13,12,10,0.055) !important; }
-html:not(.dark) .bg-white\/\[0\.03\]  { background-color: rgba(13,12,10,0.065) !important; }
-html:not(.dark) .bg-white\/\[0\.04\]  { background-color: rgba(13,12,10,0.075) !important; }
-html:not(.dark) .bg-white\/\[0\.05\]  { background-color: rgba(13,12,10,0.085) !important; }
-html:not(.dark) .bg-white\/\[0\.06\]  { background-color: rgba(13,12,10,0.09)  !important; }
-html:not(.dark) .bg-white\/\[0\.07\]  { background-color: rgba(13,12,10,0.10)  !important; }
-html:not(.dark) .bg-white\/\[0\.08\]  { background-color: rgba(13,12,10,0.11)  !important; }
-html:not(.dark) .bg-white\/\[0\.09\]  { background-color: rgba(13,12,10,0.12)  !important; }
-html:not(.dark) .bg-white\/\[0\.10\]  { background-color: rgba(13,12,10,0.13)  !important; }
-html:not(.dark) .bg-white\/\[0\.13\]  { background-color: rgba(13,12,10,0.16)  !important; }
-html:not(.dark) .bg-white\/\[0\.15\]  { background-color: rgba(13,12,10,0.18)  !important; }
+html:not(.dark) .bg-white\/\[0\.02\]  { background-color: rgba(13,12,10,0.06)  !important; }
+html:not(.dark) .bg-white\/\[0\.03\]  { background-color: rgba(13,12,10,0.10)  !important; }
+html:not(.dark) .bg-white\/\[0\.04\]  { background-color: rgba(13,12,10,0.12)  !important; }
+html:not(.dark) .bg-white\/\[0\.05\]  { background-color: rgba(13,12,10,0.13)  !important; }
+html:not(.dark) .bg-white\/\[0\.06\]  { background-color: rgba(13,12,10,0.14)  !important; }
+html:not(.dark) .bg-white\/\[0\.07\]  { background-color: rgba(13,12,10,0.15)  !important; }
+html:not(.dark) .bg-white\/\[0\.08\]  { background-color: rgba(13,12,10,0.16)  !important; }
+html:not(.dark) .bg-white\/\[0\.09\]  { background-color: rgba(13,12,10,0.17)  !important; }
+html:not(.dark) .bg-white\/\[0\.10\]  { background-color: rgba(13,12,10,0.18)  !important; }
+html:not(.dark) .bg-white\/\[0\.13\]  { background-color: rgba(13,12,10,0.20)  !important; }
+html:not(.dark) .bg-white\/\[0\.15\]  { background-color: rgba(13,12,10,0.22)  !important; }
 
 /* Hover variants */
 html:not(.dark) .hover\:bg-white\/\[0\.06\]:hover  { background-color: rgba(13,12,10,0.12)  !important; }
@@ -95,20 +95,25 @@ html:not(.dark) .border-white\/\[0\.50\]  { border-color: rgba(13,12,10,0.40)  !
 html:not(.dark) .hover\:border-white\/\[0\.50\]:hover { border-color: rgba(13,12,10,0.44) !important; }
 
 /* ── Light mode: border-white/* overrides ────────────── */
-html:not(.dark) .border-white\/\[0\.06\]  { border-color: rgba(13,12,10,0.14)  !important; }
-html:not(.dark) .border-white\/\[0\.07\]  { border-color: rgba(13,12,10,0.15)  !important; }
-html:not(.dark) .border-white\/\[0\.08\]  { border-color: rgba(13,12,10,0.16)  !important; }
-html:not(.dark) .border-white\/\[0\.09\]  { border-color: rgba(13,12,10,0.17)  !important; }
-html:not(.dark) .border-white\/\[0\.10\]  { border-color: rgba(13,12,10,0.18)  !important; }
-html:not(.dark) .border-white\/\[0\.14\]  { border-color: rgba(13,12,10,0.22)  !important; }
-html:not(.dark) .border-white\/\[0\.15\]  { border-color: rgba(13,12,10,0.24)  !important; }
-html:not(.dark) .border-white\/\[0\.18\]  { border-color: rgba(13,12,10,0.26)  !important; }
-html:not(.dark) .border-white\/\[0\.25\]  { border-color: rgba(13,12,10,0.32)  !important; }
-html:not(.dark) .border-white\/\[0\.32\]  { border-color: rgba(13,12,10,0.28)  !important; }
+html:not(.dark) .border-white\/\[0\.06\]  { border-color: rgba(13,12,10,0.18)  !important; }
+html:not(.dark) .border-white\/\[0\.07\]  { border-color: rgba(13,12,10,0.20)  !important; }
+html:not(.dark) .border-white\/\[0\.08\]  { border-color: rgba(13,12,10,0.22)  !important; }
+html:not(.dark) .border-white\/\[0\.09\]  { border-color: rgba(13,12,10,0.24)  !important; }
+html:not(.dark) .border-white\/\[0\.10\]  { border-color: rgba(13,12,10,0.26)  !important; }
+html:not(.dark) .border-white\/\[0\.14\]  { border-color: rgba(13,12,10,0.30)  !important; }
+html:not(.dark) .border-white\/\[0\.15\]  { border-color: rgba(13,12,10,0.32)  !important; }
+html:not(.dark) .border-white\/\[0\.18\]  { border-color: rgba(13,12,10,0.34)  !important; }
+html:not(.dark) .border-white\/\[0\.25\]  { border-color: rgba(13,12,10,0.40)  !important; }
+html:not(.dark) .border-white\/\[0\.32\]  { border-color: rgba(13,12,10,0.36)  !important; }
 
 html:not(.dark) .hover\:border-white\/\[0\.14\]:hover { border-color: rgba(13,12,10,0.26) !important; }
 html:not(.dark) .hover\:border-white\/\[0\.18\]:hover { border-color: rgba(13,12,10,0.30) !important; }
 html:not(.dark) .hover\:border-white\/\[0\.25\]:hover { border-color: rgba(13,12,10,0.36) !important; }
+
+/* ── Light mode: hero ambient gradient boost ─────────── */
+/* Tiny 0.11 opacity is invisible on warm light bg — boost to be visible */
+html:not(.dark) .from-indigo-500\/\[0\.11\] { --tw-gradient-from: rgba(99,102,241,0.28) var(--tw-gradient-from-position) !important; }
+html:not(.dark) .to-rose-500\/\[0\.11\]    { --tw-gradient-to: rgba(244,63,94,0.28) var(--tw-gradient-to-position) !important; }
 
 /* ── Light mode: hard-coded dark backgrounds ─────────── */
 html:not(.dark) .bg-\[\#030303\]                    { background-color: #f0ede6 !important; }
@@ -121,12 +126,12 @@ html:not(.dark) .to-\[\#030303\]                    { --tw-gradient-to: #f0ede6 
 html:not(.dark) .to-\[\#030303\]\/80                { --tw-gradient-to: rgba(240,237,230,0.80) var(--tw-gradient-to-position) !important; }
 
 /* ── Light mode: geometric shapes ────────────────────── */
-/* The elliptic shapes use white shadow + after-radial — tone them to neutral */
+/* Keep shapes chromatic and visible on warm light background */
 html:not(.dark) .shadow-\[0_8px_32px_0_rgba\(255\,255\,255\,0\.24\)\] {
-  box-shadow: 0 8px 32px 0 rgba(13,12,10,0.10) !important;
+  box-shadow: 0 8px 32px 0 rgba(100,80,200,0.18) !important;
 }
 html:not(.dark) .after\:bg-\[radial-gradient\(circle_at_50\%_50\%\,rgba\(255\,255\,255\,0\.44\)\,transparent_70\%\)\]::after {
-  background: radial-gradient(circle at 50% 50%, rgba(13,12,10,0.14), transparent 70%) !important;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.70), transparent 70%) !important;
 }
 
 /* Mobile menu hamburger lines */

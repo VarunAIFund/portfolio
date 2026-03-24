@@ -102,8 +102,8 @@ export default function About() {
                 <div
                   className={cn(
                     "p-5 rounded-2xl group cursor-default h-full",
-                    "bg-white/[0.03] border border-white/[0.08]",
-                    "hover:bg-white/[0.06] hover:border-white/[0.14]",
+                    "bg-white/[0.05] border border-white/[0.10]",
+                    "hover:bg-white/[0.08] hover:border-white/[0.16]",
                     "transition-all duration-300"
                   )}
                 >
