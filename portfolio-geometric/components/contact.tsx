@@ -36,7 +36,7 @@ export default function Contact() {
 
       <div className="relative z-10 max-w-5xl mx-auto">
         <FadeIn delay={0} className="mb-5">
-          <span className="text-xs tracking-[0.2em] text-white/50 uppercase font-syne">
+          <span className="text-xs tracking-[0.2em] text-white/60 uppercase font-syne">
             Contact
           </span>
         </FadeIn>

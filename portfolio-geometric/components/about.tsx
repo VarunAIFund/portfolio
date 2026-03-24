@@ -33,7 +33,7 @@ export default function About() {
 
       <div className="relative z-10 max-w-5xl mx-auto">
         <FadeIn delay={0} className="mb-5">
-          <span className="text-xs tracking-[0.2em] text-white/50 uppercase font-syne">
+          <span className="text-xs tracking-[0.2em] text-white/60 uppercase font-syne">
             About
           </span>
         </FadeIn>
@@ -51,19 +51,29 @@ export default function About() {
           <FadeIn delay={0.2} className="space-y-5">
             <p className="text-white/75 text-lg leading-relaxed font-light">
               I&apos;m a third-year student at{" "}
-              <span className="text-white/90">UC San Diego</span> with senior
-              standing, studying Mathematics & Computer Science with a minor
-              in Cognitive Science.
+              <span className="text-white/90 font-medium">UC San Diego</span>{" "}
+              with{" "}
+              <span className="text-white/90 font-medium">senior standing</span>
+              , studying Mathematics & Computer Science with a minor in
+              Cognitive Science.
             </p>
             <p className="text-white/75 text-lg leading-relaxed font-light">
               I currently work in AI-focused engineering roles while maintaining
-              a 3.9 GPA. I specialize in end-to-end ownership, from data
-              collection and modeling to product UI and deployment.
+              a{" "}
+              <span className="text-white/90 font-medium">3.9 GPA</span>. I
+              specialize in{" "}
+              <span className="text-white/90 font-medium">
+                end-to-end ownership
+              </span>
+              , from data collection and modeling to product UI and deployment.
             </p>
             <p className="text-white/75 text-lg leading-relaxed font-light">
-              Deep interest in applying AI to practical, human-facing
-              problems: recruiting, healthcare, education, and media. Comfort
-              in ambiguous environments where requirements aren&apos;t fully
+              Deep interest in applying AI to{" "}
+              <span className="text-white/90 font-medium">
+                practical, human-facing problems
+              </span>
+              : recruiting, healthcare, education, and media. Comfort in
+              ambiguous environments where requirements aren&apos;t fully
               defined.
             </p>
 

@@ -87,6 +87,12 @@ html:not(.dark) .hover\:bg-white\/\[0\.06\]:hover  { background-color: rgba(13,1
 html:not(.dark) .hover\:bg-white\/\[0\.07\]:hover  { background-color: rgba(13,12,10,0.13)  !important; }
 html:not(.dark) .hover\:bg-white\/\[0\.09\]:hover  { background-color: rgba(13,12,10,0.15)  !important; }
 html:not(.dark) .hover\:bg-white\/\[0\.13\]:hover  { background-color: rgba(13,12,10,0.18)  !important; }
+html:not(.dark) .bg-white\/\[0\.18\]  { background-color: rgba(13,12,10,0.14)  !important; }
+html:not(.dark) .bg-white\/\[0\.26\]  { background-color: rgba(13,12,10,0.20)  !important; }
+html:not(.dark) .hover\:bg-white\/\[0\.26\]:hover { background-color: rgba(13,12,10,0.24) !important; }
+html:not(.dark) .border-white\/\[0\.35\]  { border-color: rgba(13,12,10,0.30)  !important; }
+html:not(.dark) .border-white\/\[0\.50\]  { border-color: rgba(13,12,10,0.40)  !important; }
+html:not(.dark) .hover\:border-white\/\[0\.50\]:hover { border-color: rgba(13,12,10,0.44) !important; }
 
 /* ── Light mode: border-white/* overrides ────────────── */
 html:not(.dark) .border-white\/\[0\.06\]  { border-color: rgba(13,12,10,0.14)  !important; }

@@ -7,8 +7,13 @@ import { ArrowRight } from "lucide-react";
 
 export function FloatingCTA() {
   const [visible, setVisible] = useState(false);
+  const [contactVisible, setContactVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
-  const isLight = resolvedTheme === "light";
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > window.innerHeight * 0.85);
@@ -16,9 +21,23 @@ export function FloatingCTA() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const contactSection = document.getElementById("contact");
+    if (!contactSection) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setContactVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    observer.observe(contactSection);
+    return () => observer.disconnect();
+  }, []);
+
+  const isLight = mounted ? resolvedTheme === "light" : false;
+  const show = visible && !contactVisible;
+
   return (
     <AnimatePresence>
-      {visible && (
+      {show && (
         <motion.a
           href="#contact"
           initial={{ opacity: 0, y: 12, scale: 0.95 }}

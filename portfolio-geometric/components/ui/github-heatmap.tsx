@@ -68,8 +68,8 @@ export async function GitHubHeatmap() {
               </a>
             </div>
             <span className="text-sm font-syne font-semibold text-white/60">
-              {total.toLocaleString()}
-              <span className="text-white/35 font-normal text-xs ml-1">contributions last year</span>
+              {total.toLocaleString()}{" "}
+              <span className="text-white/35 font-normal text-xs">contributions last year</span>
             </span>
           </div>
 
