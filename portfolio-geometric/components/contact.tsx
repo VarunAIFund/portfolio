@@ -25,7 +25,7 @@ function LocalTime() {
   }, []);
 
   if (!time) return null;
-  return <span className="text-white/30 text-xs">{time} PT</span>;
+  return <span className="text-white/30 text-xs" aria-hidden="true">{time} PT</span>;
 }
 
 export default function Contact() {
