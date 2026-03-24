@@ -192,7 +192,7 @@ function HeroGeometric({
 
 function GeometricBackground() {
     const { scrollY } = useScroll();
-    const overlayOpacity = useTransform(scrollY, [0, 600], [0, 0.58]);
+    const overlayOpacity = useTransform(scrollY, [0, 900], [0, 1]);
 
     return (
         <div
