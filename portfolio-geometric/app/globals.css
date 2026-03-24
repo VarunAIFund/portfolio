@@ -132,6 +132,14 @@ html:not(.dark) .after\:bg-\[radial-gradient\(circle_at_50\%_50\%\,rgba\(255\,25
 /* Mobile menu hamburger lines */
 html:not(.dark) .bg-white\/60 { background-color: rgba(13,12,10,0.60) !important; }
 
+/* ── Light mode: GitHub heatmap cells ───────────────── */
+/* indigo-300 at low opacity is invisible on the warm light bg — shift to
+   indigo-500/600 with a wider contrast gap so all four levels are distinct */
+html:not(.dark) .bg-indigo-300\/30  { background-color: rgba(99,102,241,0.35) !important; }
+html:not(.dark) .bg-indigo-300\/55  { background-color: rgba(79,70,229,0.58)  !important; }
+html:not(.dark) .bg-indigo-300\/80  { background-color: rgba(67,56,202,0.82)  !important; }
+html:not(.dark) .bg-indigo-300      { background-color: rgb(55,48,163)        !important; }
+
 /* ── Custom scrollbar ─────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 5px;
