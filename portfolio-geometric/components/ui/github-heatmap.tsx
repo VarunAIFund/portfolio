@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 type Day = { date: string; count: number; level: number };
 
 const levelClass: Record<number, string> = {
-  0: "bg-white/[0.05]",
+  0: "bg-black/[0.06] dark:bg-white/[0.05]",
   1: "bg-indigo-300/30",
   2: "bg-indigo-300/55",
   3: "bg-indigo-300/80",
