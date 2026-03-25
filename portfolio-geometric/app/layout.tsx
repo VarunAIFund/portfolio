@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { CursorSpotlight } from "@/components/ui/cursor-spotlight";
-import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const syne = Syne({
@@ -39,7 +38,6 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange={false}
         >
-          <ScrollProgress />
           <CursorSpotlight />
           <a
             href="#main-content"
