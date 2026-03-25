@@ -78,13 +78,12 @@ export default function About() {
                 "Full-Stack",
                 "RAG Systems",
                 "Computer Vision",
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.09] text-white/65"
-                >
-                  {tag}
-                </span>
+              ].map((tag, i) => (
+                <FadeIn key={tag} delay={0.4 + i * 0.06}>
+                  <span className="text-xs px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.09] text-white/65">
+                    {tag}
+                  </span>
+                </FadeIn>
               ))}
             </div>
           </FadeIn>

@@ -101,13 +101,13 @@ export default function Experience() {
                   "group relative rounded-2xl p-6 md:p-8 overflow-hidden",
                   "bg-white/[0.05] border border-white/[0.10]",
                   "hover:bg-white/[0.08] hover:border-white/[0.16]",
-                  "transition-[background-color,border-color,box-shadow] duration-200",
+                  "transition-[background-color,border-color,box-shadow] duration-200 ease-out",
                 )}
               >
                 {/* Hover gradient */}
                 <div
                   className={cn(
-                    "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500",
+                    "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out",
                     `bg-gradient-to-r ${exp.gradientClass} to-transparent`,
                   )}
                 />

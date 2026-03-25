@@ -128,9 +128,9 @@ export default function Projects() {
               <div
                 className={cn(
                   "group relative rounded-2xl overflow-hidden h-full",
-                  "bg-white/[0.05] border border-white/[0.10]",
-                  "hover:bg-white/[0.08] hover:border-white/[0.16]",
-                  "transition-[background-color,border-color,box-shadow] duration-200",
+                  "bg-white/[0.05] border border-white/[0.13]",
+                  "hover:bg-white/[0.09] hover:border-white/[0.22]",
+                  "transition-[background-color,border-color,box-shadow] duration-200 ease-out",
                 )}
               >
                 {/* Thumbnail */}

@@ -28,8 +28,15 @@ export default function Nav() {
   useEffect(() => setMounted(true), []);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 80);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+      // When scrolled to the bottom, force-activate Contact since the section
+      // never reaches the top threshold of the IntersectionObserver
+      const atBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8;
+      if (atBottom) setActiveSection("contact");
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -83,11 +90,15 @@ export default function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm tracking-wide transition-colors duration-200 ${
+              className={`relative text-sm tracking-wide transition-colors duration-200 pb-1 ${
                 isActive ? "text-white" : "text-white/75 hover:text-white"
               }`}
             >
               {link.label}
+              <span
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white transition-opacity duration-300"
+                style={{ opacity: isActive ? 1 : 0 }}
+              />
             </a>
           );
         })}

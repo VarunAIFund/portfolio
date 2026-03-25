@@ -78,13 +78,12 @@ export default function Skills() {
                     {group.category}
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {group.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-xs px-3 py-1.5 rounded-full border border-white/[0.09] bg-white/[0.04] text-white/65"
-                      >
-                        {skill}
-                      </span>
+                    {group.skills.map((skill, j) => (
+                      <FadeIn key={skill} delay={0.2 + i * 0.08 + j * 0.03}>
+                        <span className="text-xs px-3 py-1.5 rounded-full border border-white/[0.09] bg-white/[0.04] text-white/65">
+                          {skill}
+                        </span>
+                      </FadeIn>
                     ))}
                   </div>
                 </div>
