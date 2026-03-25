@@ -69,31 +69,37 @@ html:not(.dark) [class*="from-indigo-300"][class*="bg-clip-text"] {
 }
 
 /* ── Light mode: card & glass backgrounds ────────────── */
-/* Boosted opacity so cards are visually distinct on the light background  */
-html:not(.dark) .bg-white\/\[0\.02\]  { background-color: rgba(13,12,10,0.07)  !important; }
-html:not(.dark) .bg-white\/\[0\.03\]  { background-color: rgba(13,12,10,0.14)  !important; }
-html:not(.dark) .bg-white\/\[0\.04\]  { background-color: rgba(13,12,10,0.16)  !important; }
-html:not(.dark) .bg-white\/\[0\.05\]  { background-color: rgba(13,12,10,0.18)  !important; }
-html:not(.dark) .bg-white\/\[0\.06\]  { background-color: rgba(13,12,10,0.19)  !important; }
-html:not(.dark) .bg-white\/\[0\.07\]  { background-color: rgba(13,12,10,0.20)  !important; }
-html:not(.dark) .bg-white\/\[0\.08\]  { background-color: rgba(13,12,10,0.21)  !important; }
-html:not(.dark) .bg-white\/\[0\.09\]  { background-color: rgba(13,12,10,0.22)  !important; }
-html:not(.dark) .bg-white\/\[0\.10\]  { background-color: rgba(13,12,10,0.23)  !important; }
-html:not(.dark) .bg-white\/\[0\.13\]  { background-color: rgba(13,12,10,0.25)  !important; }
-html:not(.dark) .bg-white\/\[0\.15\]  { background-color: rgba(13,12,10,0.27)  !important; }
+/* Use white-based surfaces so cards float clearly above the warm cream bg.
+   rgba(255,255,255,N) on #f0ede6 creates clean white-card elevation. */
+html:not(.dark) .bg-white\/\[0\.02\]  { background-color: rgba(255,255,255,0.50) !important; }
+html:not(.dark) .bg-white\/\[0\.03\]  { background-color: rgba(255,255,255,0.58) !important; }
+html:not(.dark) .bg-white\/\[0\.04\]  { background-color: rgba(255,255,255,0.64) !important; }
+html:not(.dark) .bg-white\/\[0\.05\]  { background-color: rgba(255,255,255,0.72) !important; }
+html:not(.dark) .bg-white\/\[0\.06\]  { background-color: rgba(255,255,255,0.76) !important; }
+html:not(.dark) .bg-white\/\[0\.07\]  { background-color: rgba(255,255,255,0.80) !important; }
+html:not(.dark) .bg-white\/\[0\.08\]  { background-color: rgba(255,255,255,0.84) !important; }
+html:not(.dark) .bg-white\/\[0\.09\]  { background-color: rgba(255,255,255,0.88) !important; }
+html:not(.dark) .bg-white\/\[0\.10\]  { background-color: rgba(255,255,255,0.90) !important; }
+html:not(.dark) .bg-white\/\[0\.13\]  { background-color: rgba(255,255,255,0.92) !important; }
+html:not(.dark) .bg-white\/\[0\.15\]  { background-color: rgba(255,255,255,0.94) !important; }
 
-/* Hover variants */
-html:not(.dark) .hover\:bg-white\/\[0\.06\]:hover  { background-color: rgba(13,12,10,0.16)  !important; }
-html:not(.dark) .hover\:bg-white\/\[0\.07\]:hover  { background-color: rgba(13,12,10,0.17)  !important; }
-html:not(.dark) .hover\:bg-white\/\[0\.08\]:hover  { background-color: rgba(13,12,10,0.22)  !important; }
-html:not(.dark) .hover\:bg-white\/\[0\.09\]:hover  { background-color: rgba(13,12,10,0.23)  !important; }
-html:not(.dark) .hover\:bg-white\/\[0\.13\]:hover  { background-color: rgba(13,12,10,0.26)  !important; }
-html:not(.dark) .bg-white\/\[0\.18\]  { background-color: rgba(13,12,10,0.18)  !important; }
-html:not(.dark) .bg-white\/\[0\.26\]  { background-color: rgba(13,12,10,0.24)  !important; }
-html:not(.dark) .hover\:bg-white\/\[0\.26\]:hover { background-color: rgba(13,12,10,0.28) !important; }
-html:not(.dark) .border-white\/\[0\.35\]  { border-color: rgba(13,12,10,0.34)  !important; }
-html:not(.dark) .border-white\/\[0\.50\]  { border-color: rgba(13,12,10,0.44)  !important; }
-html:not(.dark) .hover\:border-white\/\[0\.50\]:hover { border-color: rgba(13,12,10,0.48) !important; }
+/* Hover variants — slightly more opaque/white for clear feedback */
+html:not(.dark) .hover\:bg-white\/\[0\.06\]:hover  { background-color: rgba(255,255,255,0.82) !important; }
+html:not(.dark) .hover\:bg-white\/\[0\.07\]:hover  { background-color: rgba(255,255,255,0.85) !important; }
+html:not(.dark) .hover\:bg-white\/\[0\.08\]:hover  { background-color: rgba(255,255,255,0.88) !important; }
+html:not(.dark) .hover\:bg-white\/\[0\.09\]:hover  { background-color: rgba(255,255,255,0.92) !important; }
+html:not(.dark) .hover\:bg-white\/\[0\.13\]:hover  { background-color: rgba(255,255,255,0.94) !important; }
+html:not(.dark) .bg-white\/\[0\.18\]  { background-color: rgba(255,255,255,0.88) !important; }
+html:not(.dark) .bg-white\/\[0\.26\]  { background-color: rgba(255,255,255,0.92) !important; }
+html:not(.dark) .hover\:bg-white\/\[0\.26\]:hover { background-color: rgba(255,255,255,0.96) !important; }
+html:not(.dark) .border-white\/\[0\.35\]  { border-color: rgba(13,12,10,0.20)  !important; }
+html:not(.dark) .border-white\/\[0\.50\]  { border-color: rgba(13,12,10,0.28)  !important; }
+html:not(.dark) .hover\:border-white\/\[0\.50\]:hover { border-color: rgba(13,12,10,0.34) !important; }
+
+/* Light mode card box-shadow for elevation — applied to all card-like elements */
+html:not(.dark) .rounded-2xl {
+  box-shadow: 0 1px 3px rgba(13,12,10,0.06), 0 1px 1px rgba(13,12,10,0.04);
+}
 
 /* ── Light mode: border-white/* overrides ────────────── */
 html:not(.dark) .border-white\/\[0\.06\]  { border-color: rgba(13,12,10,0.22)  !important; }
@@ -174,6 +180,32 @@ html.dark .section-stripe {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-hover);
+}
+
+/* ── Interactive element active states ───────────────── */
+/* Every pressable element should physically respond to the press */
+a[href],
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a[href]:active,
+button:active {
+  transform: scale(0.97);
+}
+
+/* Prevent active scale on elements that handle their own transforms */
+.no-active-scale:active {
+  transform: none;
+}
+
+/* ── Hover state guard for touch devices ─────────────── */
+/* Gate hover transforms behind pointer:fine so touch taps don't linger */
+@media not (hover: hover) {
+  a[href]:hover,
+  button:hover {
+    opacity: 1;
+  }
 }
 
 /* ── Selection ──────────────────────────────────────── */

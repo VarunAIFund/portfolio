@@ -98,7 +98,7 @@ export default function About() {
                     "p-5 rounded-2xl group cursor-default h-full",
                     "bg-white/[0.05] border border-white/[0.10]",
                     "hover:bg-white/[0.08] hover:border-white/[0.16]",
-                    "transition-all duration-300"
+                    "transition-[background-color,border-color,box-shadow] duration-200"
                   )}
                 >
                   <div className="text-[10px] text-white/50 uppercase tracking-[0.15em] mb-1.5 font-syne">

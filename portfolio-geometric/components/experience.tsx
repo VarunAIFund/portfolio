@@ -101,7 +101,7 @@ export default function Experience() {
                   "group relative rounded-2xl p-6 md:p-8 overflow-hidden",
                   "bg-white/[0.05] border border-white/[0.10]",
                   "hover:bg-white/[0.08] hover:border-white/[0.16]",
-                  "transition-all duration-400",
+                  "transition-[background-color,border-color,box-shadow] duration-200",
                 )}
               >
                 {/* Hover gradient */}

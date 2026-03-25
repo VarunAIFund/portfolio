@@ -157,13 +157,13 @@ function HeroGeometric({
                     >
                         <a
                             href="#projects"
-                            className="px-6 py-3 rounded-full bg-white/[0.18] border border-white/[0.35] text-white text-sm font-medium hover:bg-white/[0.26] hover:border-white/[0.50] transition-all duration-300"
+                            className="px-6 py-3 rounded-full bg-white/[0.18] border border-white/[0.35] text-white text-sm font-medium hover:bg-white/[0.26] hover:border-white/[0.50] active:scale-[0.97] transition-[background-color,border-color,transform] duration-200"
                         >
                             View Work
                         </a>
                         <a
                             href="#contact"
-                            className="px-6 py-3 rounded-full bg-white/[0.03] border border-white/[0.10] text-white/70 text-sm hover:bg-white/[0.07] hover:border-white/[0.18] hover:text-white/90 transition-all duration-300"
+                            className="px-6 py-3 rounded-full bg-white/[0.03] border border-white/[0.10] text-white/70 text-sm hover:bg-white/[0.07] hover:border-white/[0.18] hover:text-white/90 active:scale-[0.97] transition-[background-color,border-color,color,transform] duration-200"
                         >
                             Get in touch →
                         </a>
@@ -176,14 +176,15 @@ function HeroGeometric({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2.0, duration: 0.8 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center"
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
             >
+                <span className="text-[10px] tracking-[0.18em] uppercase text-white/40 font-light">scroll</span>
                 <motion.div
-                    animate={{ y: [0, 7, 0] }}
-                    transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-                    className="text-white/30"
+                    animate={{ y: [0, 6, 0] }}
+                    transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                    className="text-white/55"
                 >
-                    <ChevronDown className="w-5 h-5" />
+                    <ChevronDown className="w-4 h-4" />
                 </motion.div>
             </motion.div>
         </div>

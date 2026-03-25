@@ -92,7 +92,9 @@ export default function Skills() {
             </FadeIn>
           ))}
         </div>
-        <GitHubHeatmap />
+        <FadeIn delay={0.2}>
+          <GitHubHeatmap />
+        </FadeIn>
       </div>
     </section>
   );
