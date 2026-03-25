@@ -35,28 +35,15 @@ export default function Contact() {
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-white/[0.02] blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <FadeIn delay={0} className="mb-5">
-          <span className="text-xs tracking-[0.2em] text-white/60 uppercase font-syne">
-            Contact
-          </span>
-        </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <h2 className="font-syne text-4xl md:text-6xl font-bold mb-5 tracking-tight">
+        <FadeIn delay={0}>
+          <h2 className="font-syne text-4xl md:text-6xl font-bold mb-10 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
-              Let&apos;s Build Something
+              Contact
             </span>
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <p className="text-white/70 text-lg font-light leading-relaxed max-w-lg mb-10">
-            I&apos;m always open to discussing new opportunities, collaborations,
-            or just chatting about AI and tech.
-          </p>
-        </FadeIn>
-
-        <FadeIn delay={0.25}>
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <a
               href="mailto:hello@varunsharma.dev"
@@ -87,53 +74,8 @@ export default function Contact() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.3}>
-          <div className="flex items-center gap-3 mb-10">
-            <a
-              href="https://github.com/varunaifund"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                "group flex items-center gap-2.5 px-5 py-3 rounded-full",
-                "bg-white/[0.04] border border-white/[0.09]",
-                "hover:bg-white/[0.08] hover:border-white/[0.18]",
-                "transition-all duration-300"
-              )}
-            >
-              <GithubIcon className="w-4 h-4 text-white/55 group-hover:text-white/80 transition-colors duration-200" />
-              <span className="text-sm text-white/70 group-hover:text-white/90 transition-colors duration-200">GitHub</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/varun-sharma-891286229/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                "group flex items-center gap-2.5 px-5 py-3 rounded-full",
-                "bg-white/[0.04] border border-white/[0.09]",
-                "hover:bg-white/[0.08] hover:border-white/[0.18]",
-                "transition-all duration-300"
-              )}
-            >
-              <Linkedin className="w-4 h-4 text-white/55 group-hover:text-white/80 transition-colors duration-200" />
-              <span className="text-sm text-white/70 group-hover:text-white/90 transition-colors duration-200">LinkedIn</span>
-            </a>
-            <a
-              href="/resume.pdf"
-              download
-              className={cn(
-                "group flex items-center gap-2.5 px-5 py-3 rounded-full",
-                "bg-white/[0.04] border border-white/[0.09]",
-                "hover:bg-white/[0.08] hover:border-white/[0.18]",
-                "transition-all duration-300"
-              )}
-            >
-              <span className="text-sm text-white/70 group-hover:text-white/90 transition-colors duration-200">Resume ↓</span>
-            </a>
-          </div>
-        </FadeIn>
-
         {/* Footer */}
-        <FadeIn delay={0.35}>
+        <FadeIn delay={0.25}>
           <footer className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <span className="font-syne font-bold text-white/50 text-sm tracking-wide">

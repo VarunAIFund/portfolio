@@ -58,13 +58,7 @@ export default function Skills() {
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-indigo-500/[0.03] blur-[120px] rounded-full pointer-events-none -translate-y-1/2" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <FadeIn delay={0} className="mb-5">
-          <span className="text-xs tracking-[0.2em] text-white/60 uppercase font-syne">
-            Skills
-          </span>
-        </FadeIn>
-
-        <FadeIn delay={0.1}>
+        <FadeIn delay={0}>
           <h2 className="font-syne text-4xl md:text-6xl font-bold mb-8 md:mb-10 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
               Tech Stack

@@ -46,9 +46,10 @@ export function FloatingCTA() {
           transition={{ duration: 0.25, ease: "easeOut" }}
           className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-2.5 rounded-full backdrop-blur-md text-sm transition-colors duration-200"
           style={{
-            background: isLight ? "rgba(13,12,10,0.06)" : "rgba(255,255,255,0.07)",
-            border: isLight ? "1px solid rgba(13,12,10,0.13)" : "1px solid rgba(255,255,255,0.13)",
-            color: isLight ? "rgba(13,12,10,0.80)" : "rgba(255,255,255,0.80)",
+            background: isLight ? "rgba(240,237,230,0.94)" : "rgba(255,255,255,0.07)",
+            border: isLight ? "1px solid rgba(13,12,10,0.22)" : "1px solid rgba(255,255,255,0.13)",
+            color: isLight ? "rgba(13,12,10,0.88)" : "rgba(255,255,255,0.80)",
+            boxShadow: isLight ? "0 4px 20px rgba(13,12,10,0.10)" : "none",
           }}
         >
           Get in touch
