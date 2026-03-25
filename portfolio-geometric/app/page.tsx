@@ -14,7 +14,7 @@ import { FloatingCTA } from "@/components/ui/floating-cta";
 export default function Home() {
   return (
     <main className="min-h-screen overflow-x-clip">
-      <GeometricBackground />
+      {/* <GeometricBackground /> */}
       <AmbientGlow />
       <FloatingCTA />
       <Nav />
