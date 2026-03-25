@@ -3,11 +3,11 @@ import { cn } from "@/lib/utils";
 type Day = { date: string; count: number; level: number };
 
 const levelClass: Record<number, string> = {
-  0: "bg-white/[0.05]",
-  1: "bg-indigo-300/30",
-  2: "bg-indigo-300/55",
-  3: "bg-indigo-300/80",
-  4: "bg-indigo-300",
+  0: "bg-gray-200 dark:bg-white/[0.05]",
+  1: "bg-indigo-200 dark:bg-indigo-300/30",
+  2: "bg-indigo-300 dark:bg-indigo-300/55",
+  3: "bg-indigo-500 dark:bg-indigo-300/80",
+  4: "bg-indigo-700 dark:bg-indigo-300",
 };
 
 async function fetchContributions(): Promise<{ days: Day[]; total: number }> {
