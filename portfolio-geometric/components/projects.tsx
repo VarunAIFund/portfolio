@@ -82,6 +82,34 @@ const projects: Project[] = [
     ],
   },
   {
+    title: "NeuralVault",
+    description:
+      "Your Desktop as a living 3D knowledge graph, searchable with plain English. Gemini embeds every file, cosine similarity builds the edges, and label propagation detects semantic clusters.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Flask",
+      "Gemini API",
+      "LanceDB",
+      "Three.js",
+    ],
+    period: "Mar 2026",
+    features: [
+      "Embeds text, code, images, PDFs, and video — images captioned by Gemini Flash before embedding",
+      "3D force-graph with nodes sized by degree and colored by file type or community",
+      "semantic search powered by vector similarity over LanceDB",
+    ],
+    github: "https://github.com/VarunAIFund/knowledge-graph-builder",
+    live: null,
+    image: "/projects/neuralvault/graph-overview.png",
+    gallery: [
+      "/projects/neuralvault/graph-overview.png",
+      "/projects/neuralvault/graph-nodes.png",
+      "/projects/neuralvault/graph-detail.png",
+      "/projects/neuralvault/search.png",
+    ],
+  },
+  {
     title: "Movie Tracker",
     description:
       "Social media tracking app for movies and TV shows with watchlists, friend activity feed, and Firebase real-time backend.",
@@ -136,10 +164,17 @@ export default function Projects() {
                 {/* Thumbnail */}
                 {project.image && (
                   <div
-                    className={cn("relative overflow-hidden h-44", project.gallery && "cursor-pointer")}
+                    className={cn(
+                      "relative overflow-hidden h-44",
+                      project.gallery && "cursor-pointer",
+                    )}
                     onClick={() =>
                       project.gallery &&
-                      setGallery({ images: project.gallery, title: project.title, index: 0 })
+                      setGallery({
+                        images: project.gallery,
+                        title: project.title,
+                        index: 0,
+                      })
                     }
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
