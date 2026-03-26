@@ -10,3 +10,5 @@ node_modules/
 
 # Keep real project assets
 !public/**
+
+.env
