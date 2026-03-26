@@ -1,4 +1,7 @@
 .vercel
+node_modules/
+.next/
+.playwright-mcp/
 
 # Ignore loose screenshots/images at repo root
 *.png
