@@ -52,7 +52,7 @@ export default function Contact() {
         <FadeIn delay={0.2}>
           <div className="flex flex-col sm:flex-row gap-3 mt-8 mb-6">
             <a
-              href="mailto:hello@varunsharma.dev"
+              href="mailto:vas001@ucsd.edu"
               className={cn(
                 "group flex items-center gap-3 px-6 py-4 rounded-full no-active-scale",
                 "bg-white/[0.09] border border-white/[0.18]",
@@ -61,7 +61,7 @@ export default function Contact() {
               )}
             >
               <Mail className="w-4 h-4 text-white/60 flex-shrink-0" />
-              <span className="text-sm text-white/90 font-medium">hello@varunsharma.dev</span>
+              <span className="text-sm text-white/90 font-medium">vas001@ucsd.edu</span>
               <ArrowRight className="w-4 h-4 ml-auto text-white/35 group-hover:translate-x-0.5 group-hover:text-white/60 transition-[transform,color] duration-150" />
             </a>
 
@@ -88,7 +88,7 @@ export default function Contact() {
                 Varun Sharma
               </span>
               <span className="text-white/30">·</span>
-              <span className="text-white/45 text-xs">hello@varunsharma.dev</span>
+              <span className="text-white/45 text-xs">vas001@ucsd.edu</span>
             </div>
             <div className="flex items-center gap-4">
               <a
